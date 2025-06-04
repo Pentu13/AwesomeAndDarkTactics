@@ -80,3 +80,11 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+<<<<<<< HEAD
+=======
+
+# Search configuration
+search:
+  enabled: true
+  json_path: search.json
+>>>>>>> backup-search-enhancements
