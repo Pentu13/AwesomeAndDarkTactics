@@ -10,6 +10,11 @@ order: 1
     </p>
 </div>
 
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search tactics, categories, or tags...">
+    <div id="search-results"></div>
+</div>
+
 <div>
     <img src=" {{ "assets/misc/definition-awesome_dark_tactics.png" | relative_url }}" style="margin: 0 auto; display:block; width: 50%; padding-top: 20px; padding-bottom: 30px;">
 
@@ -33,3 +38,6 @@ order: 1
         <a class="button" href="{{ "catalog.html" | relative_url }}">Browse the catalog</a>
     </div>
 </div>
+
+<link rel="stylesheet" href="{{ "assets/css/search.css" | relative_url }}">
+<script src="{{ "assets/js/search.js" | relative_url }}"></script>
