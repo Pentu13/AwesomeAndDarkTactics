@@ -4,6 +4,11 @@
     margin: 20px auto;
 }
 
+.search-input-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
 #search-input {
     width: 100%;
     padding: 10px 15px;
@@ -18,6 +23,72 @@
     border-color: #007bff;
 }
 
+.search-filters {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+    font-size: 14px;
+}
+
+#role-filter {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    font-size: 14px;
+}
+
+.tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 100px;
+    overflow-y: auto;
+    padding: 2px;
+}
+
+.tag-filter {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    background: #e9ecef;
+    border-radius: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.tag-filter:hover {
+    background: #dee2e6;
+    transform: translateY(-1px);
+}
+
+.tag-filter.selected {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
 #search-results {
     display: none;
     position: absolute;
@@ -28,18 +99,13 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-height: 600px;
+    max-height: 400px;
     overflow-y: auto;
     z-index: 1000;
 }
 
 .search-section {
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.search-section:last-child {
-    border-bottom: none;
 }
 
 .search-section h4 {
@@ -50,6 +116,10 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.search-section:not(:last-child) {
+    border-bottom: 1px solid #eee;
 }
 
 .search-result-item {
@@ -64,13 +134,11 @@
 .search-result-item a {
     text-decoration: none;
     color: inherit;
-    display: block;
 }
 
 .search-result-item h3 {
     margin: 0 0 5px 0;
     color: #007bff;
-    font-size: 16px;
 }
 
 .search-result-item .category {
@@ -89,9 +157,15 @@
 }
 
 .search-result-item .content {
-    font-size: 13px;
+    font-size: 12px;
     color: #666;
     margin-top: 5px;
+}
+
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: #666;
 }
 
 .category-item {
@@ -100,10 +174,4 @@
 
 .tactic-item {
     background-color: white;
-}
-
-.no-results {
-    padding: 15px;
-    text-align: center;
-    color: #666;
 } 

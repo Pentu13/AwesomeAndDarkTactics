@@ -11,8 +11,18 @@ order: 1
 </div>
 
 <div class="search-container">
-    <input type="text" id="search-input" placeholder="Search tactics, categories, or tags...">
-    <div id="search-results"></div>
+    <div class="search-input-group">
+        <input type="text" id="search-input" placeholder="Search tactics, categories, or tags...">
+        <div id="search-results"></div>
+    </div>
+    <div class="search-filters">
+        <div class="filter-group">
+            <label>Tags:</label>
+            <div id="tag-filters" class="tag-filters">
+                <!-- Tags will be populated dynamically -->
+            </div>
+        </div>
+    </div>
 </div>
 
 <div>
