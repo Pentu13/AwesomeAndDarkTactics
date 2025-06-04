@@ -48,22 +48,6 @@ defaults:
       t-source-doi: "NA"
       t-diagram: "NA"
 
-    # values:
-    #   t-type: "< unknown >"
-    #   t-description: "< unknown >"
-    #   t-participant: "< unknown >"
-    #   t-artifact: "< unknown >"
-    #   t-context: "< unknown >"
-    #   t-feature: "< unknown >"
-    #   t-goal: "< unknown >"
-    #   t-targetQA: "< unknown >"
-    #   t-relatedQA: "< unknown >"
-    #   t-measuredimpact: "< unknown >"
-    #   t-countermeasure: "< unknown >"
-    #   t-source: "< unknown >"
-    #   diagram: "NA"
-
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -80,11 +64,8 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-<<<<<<< HEAD
-=======
 
 # Search configuration
 search:
   enabled: true
   json_path: search.json
->>>>>>> backup-search-enhancements
