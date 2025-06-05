@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Tactic Field Schema",
+    "description": "Schema for the tactic field in search index",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "Insert Tactic NAME",
+            "default": "Please fill in the tactic name"
+        },
+        "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "example-tag-1 example-tag-2 example-tag-3",
+            "default": []
+        },
+        "t-sort": {
+            "type": "string",
+            "description": "dark tactic or Awesome tactic",
+            "default": "Please specify: Dark Tactic or Awesome Tactic"
+        },
+        "t-type": {
+            "type": "string",
+            "description": "Unsustainable tactic or sustainable tactic",
+            "default": "Please specify the tactic type"
+        },
+        "categories": {
+            "type": "string",
+            "description": "example-category",
+            "default": "Please specify the category"
+        },
+        "t-description": {
+            "type": "string",
+            "description": "Description of how to execute and apply the tactic to the related artifact",
+            "default": "Please describe the tactic"
+        },
+        "t-participant": {
+            "type": "string",
+            "description": "participant applying the tactic",
+            "default": "Please specify the participant"
+        },
+        "t-artifact": {
+            "type": "string",
+            "description": "The (software) artifact the tactic should be applied to",
+            "default": "Please specify the artifact"
+        },
+        "t-context": {
+            "type": "string",
+            "description": "The context in which the artifact is considered",
+            "default": "Please specify the context"
+        },
+        "t-feature": {
+            "type": "string",
+            "description": "The feature of the artifact",
+            "default": "Please specify the feature"
+        },
+        "t-intent": {
+            "type": "string",
+            "description": "The intent or goal of this tactic",
+            "default": "Please specify the intent"
+        },
+        "t-intentmeasure": {
+            "type": "string",
+            "description": "The metric used to measure the impact and/or the actual measured impact on the artifact after applying the tactic",
+            "default": "Please specify the intent measure"
+        },
+        "t-countermeasure": {
+            "type": "string",
+            "description": "How to counter this unsustainable pattern",
+            "default": "Please specify the countermeasure"
+        },
+        "t-source": {
+            "type": "string",
+            "description": "The source of this tactic definition",
+            "default": "Please specify the source"
+        },
+        "t-source-doi": {
+            "type": "string",
+            "description": "the DOI of the source",
+            "default": "Please specify the DOI"
+        },
+        "t-targetQA": {
+            "type": "string",
+            "description": "The target quality attribute of this tactic",
+            "default": "Please specify the target QA"
+        },
+        "t-relatedQA": {
+            "type": "string",
+            "description": "Other related quality attributes that this tactic can also affect",
+            "default": "Please specify related QAs"
+        },
+        "t-measuredimpact": {
+            "type": "string",
+            "description": "The metric used to measure the impact and/or the actual measured impact on the artifact after applying the tactic (Awesome Tactic)",
+            "default": "Please specify the measured impact"
+        },
+         "t-diagram": {
+            "type": "string",
+            "description": "Diagram of the tactic",
+            "default": "Please complete the diagram"
+        }
+    }
+}
