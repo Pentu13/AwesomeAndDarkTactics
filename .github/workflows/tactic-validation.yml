@@ -18,7 +18,7 @@ jobs:
                 node-version: '20'
             
             - name: Install dependencies
-              run: npm install -g fs-extra gray-matter ajv
+              run: npm install
             
             - name: Run validation script
               run: node validator_new_posts.js
