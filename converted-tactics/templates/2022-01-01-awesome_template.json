@@ -19,6 +19,6 @@
   "t-source": "The source of this tactic definition",
   "t-source-doi": "the DOI of the source",
   "t-diagram": "template_awesome_tactic.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }

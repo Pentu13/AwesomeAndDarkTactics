@@ -19,28 +19,37 @@ layout: default
       {% elsif page.t-sort == "Dark Tactic" %}
         <span class="dark-tactic">{{ page.t-sort}}</span>
       {% else %}
-        <span>{{ page.t-sort}}</span>
+        <span>{{ page.t-sort }}</span>
       {% endif %}
     </div>
     <div>
-      <span><strong>Type:</strong> {{ page.t-type }}</span>
+      <span><strong>Type:</strong>
+        {% if page.t-type == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          {{ page.t-type }}
+        {% endif %}
+      </span>
     </div>
     <div>
-      <span><strong>Category:</strong> </span><span><a href="{{ "categories/" | append: page.categories[0] | append: ".html" | relative_url }}">{{ page.categories[0] }}</a></span>
+      <span><strong>Category:</strong> </span>
+      {% if page.categories and page.categories[0] %}
+        <span><a href="{{ "categories/" | append: page.categories[0] | append: ".html" | relative_url }}">{{ page.categories[0] }}</a></span>
+      {% else %}
+        <span class="unavailable">&lt;Unavailable&gt;</span>
+      {% endif %}
     </div>
     <div>
       <span><strong>Tags:</strong></span>
       {% assign my-tags = page.tags | sort %}
-      {% for my-tag in my-tags %}
-        <span><a href="{{ "tags/" | append: my-tag | append: ".html" | relative_url }}">{{ my-tag }}</a>&nbsp;</span>
-      {% endfor %}
+      {% if my-tags and my-tags.size > 0 %}
+        {% for my-tag in my-tags %}
+          <span><a href="{{ "tags/" | append: my-tag | append: ".html" | relative_url }}">{{ my-tag }}</a>&nbsp;</span>
+        {% endfor %}
+      {% else %}
+        <span class="unavailable">&lt;Unavailable&gt;</span>
+      {% endif %}
     </div>
-    <!-- <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      </p> -->
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -57,44 +66,84 @@ layout: default
       </p>
       <p class="st">
         <h3 class="st">Description</h3>
-        <span class="st">{{ page.t-description }}</span>
+        {% if page.t-description == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-description }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Participant </h3>
-        <span class="st">{{ page.t-participant }}</span>
+        {% if page.t-participant == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-participant }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Related software artifact</h3>
-        <span class="st">{{ page.t-artifact }}</span>
+        {% if page.t-artifact == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-artifact }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Context</h3>
-        <span class="st">{{ page.t-context }}</span>
+        {% if page.t-context == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-context }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Software feature</h3>
-        <span class="st">{{ page.t-feature }}</span>
+        {% if page.t-feature == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-feature }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Tactic intent</h3>
-        <span class="st">{{ page.t-intent }}</span>
+        {% if page.t-intent == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-intent }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Target quality attribute</h3>
-        <span class="st">{{ page.t-targetQA }}</span>
+        {% if page.t-targetQA == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-targetQA }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Other related quality attributes</h3>
-        <span class="st">{{ page.t-relatedQA }}</span>
+        {% if page.t-relatedQA == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-relatedQA }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Measured impact</h3>
-        <span class="st">{{ page.t-measuredimpact }}</span>
+        {% if page.t-measuredimpact == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-measuredimpact }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Source</h3>
-        <span class="st">{{ page.t-source }}</span>
-        {% unless page.t-source-doi == "NA" %}
+        {% if page.t-source == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-source }}</span>
+        {% endif %}
+        {% unless page.t-source-doi == "NA" or page.t-source-doi == "<Unavailable>" %}
           <span>(DOI: <a href="{{ page.t-source-doi }}">{{ page.t-source-doi }}</a>)</span>
         {% endunless %}
       </p>
@@ -109,41 +158,77 @@ layout: default
       </p>
       <p class="st">
         <h3 class="st">Description</h3>
-        <span class="st">{{ page.t-description }}</span>
+        {% if page.t-description == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-description }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Participant </h3>
-        <span class="st">{{ page.t-participant }}</span>
+        {% if page.t-participant == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-participant }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Related artifact</h3>
-        <span class="st">{{ page.t-artifact }}</span>
+        {% if page.t-artifact == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-artifact }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Context</h3>
-        <span class="st">{{ page.t-context }}</span>
+        {% if page.t-context == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-context }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Feature</h3>
-        <span class="st">{{ page.t-feature }}</span>
+        {% if page.t-feature == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-feature }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Tactic intent</h3>
-        <span class="st">{{ page.t-intent }}</span>
+        {% if page.t-intent == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-intent }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Intent measure</h3>
-        <span class="st">{{ page.t-intentmeasure }}</span>
+        {% if page.t-intentmeasure == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-intentmeasure }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Countermeasure</h3>
-        <span class="st">{{ page.t-countermeasure }}</span>
+        {% if page.t-countermeasure == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-countermeasure }}</span>
+        {% endif %}
       </p>
       <p class="st">
         <h3 class="st">Source</h3>
-        <span class="st">{{ page.t-source }}</span>
-        {% unless page.t-source-doi == "NA" %}
-        <span>(DOI:&nbsp;<a href="{{ page.t-source-doi }}">{{ page.t-source-doi }}</a>)</span>
+        {% if page.t-source == "<Unavailable>" %}
+          <span class="unavailable">&lt;Unavailable&gt;</span>
+        {% else %}
+          <span class="st">{{ page.t-source }}</span>
+        {% endif %}
+        {% unless page.t-source-doi == "NA" or page.t-source-doi == "<Unavailable>" %}
+          <span>(DOI:&nbsp;<a href="{{ page.t-source-doi }}">{{ page.t-source-doi }}</a>)</span>
         {% endunless %}
       </p>
     </div>
@@ -153,11 +238,13 @@ layout: default
   <div>
     <h3 class="st">Graphical representation</h3>
 
-    {% if page.t-diagram == "NA" %}
-      <a href=" {{ "contributions" | relative_url }} "><img src=" {{ "assets/diagrams/contribution.png" | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;"></a>
-    {% else %}
-      <img src=" {{ "assets/diagrams/" | append: page.t-diagram | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;">
-    {% endif %}
+{% if page.t-diagram == "NA" or page.t-diagram == "<Unavailable>" %}
+  <a href="{{ "contributions" | relative_url }}">
+    <img src="{{ "assets/diagrams/contribution.png" | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;">
+  </a>
+{% else %}
+  <img src="{{ "assets/diagrams/" | append: page.t-diagram | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;">
+{% endif %}
 
   </div>
 

@@ -21,6 +21,6 @@
   "t-source": "Verdecchia, R., Cruz, L., Sallou, J., Lin, M., Wickenden, J., & Hotellier, E. (2022, June). Data-centric green ai an exploratory empirical study. In 2022 International Conference on ICT for Sustainability (ICT4S) (pp. 35-45). IEEE.; Yue Wang, Ziyu Jiang, Xiaohan Chen, Pengfei Xu, Yang Zhao, Yingyan Lin, and Zhangyang Wang. 2019. E2-Train: Training State-of-the-art CNNs with Over 80% Energy Savings. In Advances in Neural Information Processing Systems, H. Wallach, H. Larochelle, A. Beygelzimer, F. d'Alché-Buc, E. Fox, and R. Garnett (Eds.), Vol. 32. Curran Associates, Inc.",
   "t-source-doi": "https://doi.org/10.1109/ICT4S55073.2022.00015",
   "t-diagram": "apply-sampling-techniques.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }

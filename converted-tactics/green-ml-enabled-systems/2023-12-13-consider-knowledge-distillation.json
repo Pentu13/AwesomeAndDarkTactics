@@ -16,10 +16,10 @@
   "t-intent": "Improve energy efficiency by apply knowledge distillation of pre-trained models if they are too big for a given task",
   "t-targetQA": "Performance",
   "t-relatedQA": "Accuracy, Energy Efficiency",
-  "t-measuredimpact": "",
+  "t-measuredimpact": "<Unavailable>",
   "t-source": "Shanbhag, S., Chimalakonda, S., Sharma, V. S., & Kaulgud, V. (2022, June). Towards a Catalog of Energy Patterns in Deep Learning Development. In Proceedings of the International Conference on Evaluation and Assessment in Software Engineering 2022 (pp. 150-159). [DOI](https://doi.org/10.1145/3530019.3530035); Haichuan Yang, Yuhao Zhu, and Ji Liu. 2019. Energy-Constrained Compression for Deep Neural Networks Via Weighted Sparse Projection and Layer Input Masking. International Conference on Learning Representations (ICLR) (2019) (ICDCSW). 55–62. [DOI](https://doi.org/10.48550/arXiv.1806.04321)",
-  "t-source-doi": "",
+  "t-source-doi": "<Unavailable>",
   "t-diagram": "consider-knowledge-distillation.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }

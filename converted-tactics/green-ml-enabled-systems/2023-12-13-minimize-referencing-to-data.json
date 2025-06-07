@@ -16,10 +16,10 @@
   "t-intent": "Improve energy efficiency by avoiding unnecessary data read/write operations",
   "t-targetQA": "Energy Efficiency",
   "t-relatedQA": "Resource Utilization",
-  "t-measuredimpact": "",
+  "t-measuredimpact": "<Unavailable>",
   "t-source": "Shanbhag, S., Chimalakonda, S., Sharma, V. S., & Kaulgud, V. (2022, June). Shriram Shanbhag, Sridhar Chimalakonda, Vibhu Saujanya Sharma, and Vikrant Kaulgud. 2022. Towards a Catalog of Energy Patterns in Deep Learning Development. In Proceedings of the International Conference on Evaluation and Assessment in Software Engineering 2022. 150–159.",
   "t-source-doi": "https://doi.org/10.1145/3530019.3530035",
   "t-diagram": "minimize-referencing-to-data.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }

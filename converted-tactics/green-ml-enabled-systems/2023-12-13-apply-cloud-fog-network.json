@@ -13,7 +13,7 @@
   "t-participant": "Software Designer",
   "t-artifact": "Machine Learning Algorithm",
   "t-context": "Network",
-  "t-feature": "",
+  "t-feature": "<Unavailable>",
   "t-intent": "Improve energy efficiency by using CFNs to bring the cloud closer to edge devices and reduce energy consumption due to data transfers",
   "t-targetQA": "Energy Efficiency",
   "t-relatedQA": "Performance",
@@ -21,6 +21,6 @@
   "t-source": "Barzan A Yosuf, Sanaa H Mohamed, Mohammed M Alenazi, Taisir EH El-Gorashi, and Jaafar MH Elmirghani. 2021. Energy-Efficient AI over a Virtualized Cloud Fog Network. In Proceedings of the Twelfth ACM International Conference on Future Energy Systems. 328–334",
   "t-source-doi": "https://doi.org/10.1145/3447555.3465378",
   "t-diagram": "apply-cloud-fog-network.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }
