@@ -13,7 +13,7 @@
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Algorithm",
   "t-context": "Machine Learning",
-  "t-feature": "",
+  "t-feature": "<Unavailable>",
   "t-intent": "Improve energy efficiency by removing unnecessary or less important weights in neural networks",
   "t-targetQA": "Energy Efficiency",
   "t-relatedQA": "Accuracy",
@@ -21,6 +21,6 @@
   "t-source": "Xiangyu Yang, Sheng Hua, Yuanming Shi, Hao Wang, Jun Zhang, and Khaled B. Letaief. 2020. Sparse Optimization for Green Edge AI Inference. Journal of Communications and Information Networks 5, 1 (2020), 1–15.",
   "t-source-doi": "https://doi.org/10.23919/JCIN.2020.9055106",
   "t-diagram": "enhance-model-sparsity.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }

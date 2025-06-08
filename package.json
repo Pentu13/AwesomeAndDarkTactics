@@ -1,0 +1,44 @@
+{
+  "name": "awesomeanddarktactics",
+  "version": "1.0.0",
+  "description": "This repository hosts the website of the Archive of Awesome and Dark Tactics.",
+  "main": "convert.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "argparse": "^1.0.10",
+    "esprima": "^4.0.1",
+    "extend-shallow": "^2.0.1",
+    "fast-deep-equal": "^3.1.3",
+    "fast-uri": "^3.0.6",
+    "fs-extra": "^11.3.0",
+    "graceful-fs": "^4.2.11",
+    "gray-matter": "^4.0.3",
+    "is-extendable": "^0.1.1",
+    "js-yaml": "^3.14.1",
+    "json-schema-traverse": "^1.0.0",
+    "jsonfile": "^6.1.0",
+    "kind-of": "^6.0.3",
+    "require-from-string": "^2.0.2",
+    "section-matter": "^1.0.0",
+    "sprintf-js": "^1.0.3",
+    "strip-bom-string": "^1.0.0",
+    "universalify": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pentu13/AwesomeAndDarkTactics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pentu13/AwesomeAndDarkTactics/issues"
+  },
+  "homepage": "https://github.com/Pentu13/AwesomeAndDarkTactics#readme"
+}

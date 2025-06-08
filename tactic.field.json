@@ -7,7 +7,7 @@
         "title": {
             "type": "string",
             "description": "Insert Tactic NAME",
-            "default": "Please fill in the tactic name"
+            "default": "<Unavailable>"
         },
         "tags": {
             "type": "array",
@@ -18,87 +18,87 @@
         "t-sort": {
             "type": "string",
             "description": "dark tactic or Awesome tactic",
-            "default": "Please specify: Dark Tactic or Awesome Tactic"
+            "default": "<Unavailable>"
         },
         "t-type": {
             "type": "string",
             "description": "Unsustainable tactic or sustainable tactic",
-            "default": "Please specify the tactic type"
+            "default": "<Unavailable>"
         },
         "categories": {
             "type": "string",
             "description": "example-category",
-            "default": "Please specify the category"
+            "default": "<Unavailable>"
         },
         "t-description": {
             "type": "string",
             "description": "Description of how to execute and apply the tactic to the related artifact",
-            "default": "Please describe the tactic"
+            "default": "<Unavailable>"
         },
         "t-participant": {
             "type": "string",
             "description": "participant applying the tactic",
-            "default": "Please specify the participant"
+            "default": "<Unavailable>"
         },
         "t-artifact": {
             "type": "string",
             "description": "The (software) artifact the tactic should be applied to",
-            "default": "Please specify the artifact"
+            "default": "<Unavailable>"
         },
         "t-context": {
             "type": "string",
             "description": "The context in which the artifact is considered",
-            "default": "Please specify the context"
+            "default": "<Unavailable>"
         },
         "t-feature": {
             "type": "string",
             "description": "The feature of the artifact",
-            "default": "Please specify the feature"
+            "default": "<Unavailable>"
         },
         "t-intent": {
             "type": "string",
             "description": "The intent or goal of this tactic",
-            "default": "Please specify the intent"
+            "default": "<Unavailable>"
         },
         "t-intentmeasure": {
             "type": "string",
             "description": "The metric used to measure the impact and/or the actual measured impact on the artifact after applying the tactic",
-            "default": "Please specify the intent measure"
+            "default": "<Unavailable>"
         },
         "t-countermeasure": {
             "type": "string",
             "description": "How to counter this unsustainable pattern",
-            "default": "Please specify the countermeasure"
+            "default": "<Unavailable>"
         },
         "t-source": {
             "type": "string",
             "description": "The source of this tactic definition",
-            "default": "Please specify the source"
+            "default": "<Unavailable>"
         },
         "t-source-doi": {
             "type": "string",
             "description": "the DOI of the source",
-            "default": "Please specify the DOI"
+            "default": "<Unavailable>"
         },
         "t-targetQA": {
             "type": "string",
             "description": "The target quality attribute of this tactic",
-            "default": "Please specify the target QA"
+            "default": "<Unavailable>"
         },
         "t-relatedQA": {
             "type": "string",
             "description": "Other related quality attributes that this tactic can also affect",
-            "default": "Please specify related QAs"
+            "default": "<Unavailable>"
         },
         "t-measuredimpact": {
             "type": "string",
             "description": "The metric used to measure the impact and/or the actual measured impact on the artifact after applying the tactic (Awesome Tactic)",
-            "default": "Please specify the measured impact"
+            "default": "<Unavailable>"
         },
-         "t-diagram": {
+        "t-diagram": {
             "type": "string",
             "description": "Diagram of the tactic",
-            "default": "Please complete the diagram"
+            "default": "<Unavailable>"
         }
     }
 }

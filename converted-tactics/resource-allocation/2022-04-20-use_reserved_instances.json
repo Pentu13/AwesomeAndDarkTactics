@@ -9,14 +9,14 @@
   "t-participant": "Cloud consumer",
   "t-artifact": "Cloud workloads",
   "t-context": "Public cloud",
-  "t-feature": "",
+  "t-feature": "<Unavailable>",
   "t-intent": "Increasing predictability in energy consumption for the cloud provider",
-  "t-targetQA": "",
-  "t-relatedQA": "",
-  "t-measuredimpact": "",
+  "t-targetQA": "<Unavailable>",
+  "t-relatedQA": "<Unavailable>",
+  "t-measuredimpact": "<Unavailable>",
   "t-source": "Master Thesis “Architectural Tactics to Optimize Software for Energy Efficiency in the Public Cloud” by Sophie Vos",
   "t-source-doi": "NA",
-  "t-intentmeasure": "",
-  "t-countermeasure": "",
-  "t-diagram": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-diagram": "<Unavailable>"
 }

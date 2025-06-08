@@ -16,10 +16,10 @@
   "t-intent": "Improve energy efficiency by choosing lighter alternatives of existing algorithms, if possible.",
   "t-targetQA": "Energy Efficiency",
   "t-relatedQA": "Accuracy, Performance",
-  "t-measuredimpact": "",
+  "t-measuredimpact": "<Unavailable>",
   "t-source": "Martino Sorbaro, Qian Liu, Massimo Bortone, and Sadique Sheik. 2020. Optimizing the Energy Consumption of Spiking Neural Networks for Neuromorphic Applications. Frontiers in Neuroscience 14 (2020), 662",
   "t-source-doi": "https://doi.org/10.3389/fnins.2020.00662",
   "t-diagram": "choose-a-lightweight-algorithm-alternative.png",
-  "t-intentmeasure": "",
-  "t-countermeasure": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
 }

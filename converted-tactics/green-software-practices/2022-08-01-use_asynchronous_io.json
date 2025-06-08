@@ -11,14 +11,14 @@
   "t-participant": "Software application developers",
   "t-artifact": "RPC between 2 servers, use file transfer (e.g. SSH/FTP)",
   "t-context": "Green Lab",
-  "t-feature": "",
+  "t-feature": "<Unavailable>",
   "t-intent": "Use asynchronous I/O",
   "t-targetQA": "Energy-efficiency",
-  "t-relatedQA": "",
-  "t-measuredimpact": "",
+  "t-relatedQA": "<Unavailable>",
+  "t-measuredimpact": "<Unavailable>",
   "t-source": "Procaccianti, G., Fernández, H., & Lago, P. (2019). Green Software in Practice: Empirical Validation and Assessment of Best Practices for Writing Energy-Efficient Software. Vrije Universiteit Amsterdam, October 2019.",
   "t-source-doi": "NA",
-  "t-intentmeasure": "",
-  "t-countermeasure": "",
-  "t-diagram": ""
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-diagram": "<Unavailable>"
 }
