@@ -52,6 +52,15 @@ layout: default
     </div>
   </header>
 
+  <!-- Diagram section moved to top -->
+  {% if page.t-diagram != "NA" and page.t-diagram != "<Unavailable>" %}
+    <div>
+      <h3 class="st">Graphical representation</h3>
+      <img src="{{ "assets/diagrams/" | append: page.t-diagram | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;">
+    </div>
+    <hr>
+  {% endif %}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
@@ -233,20 +242,6 @@ layout: default
       </p>
     </div>
   {% endif %}
-
-  <hr>
-  <div>
-    <h3 class="st">Graphical representation</h3>
-
-{% if page.t-diagram == "NA" or page.t-diagram == "<Unavailable>" %}
-  <a href="{{ "contributions" | relative_url }}">
-    <img src="{{ "assets/diagrams/contribution.png" | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;">
-  </a>
-{% else %}
-  <img src="{{ "assets/diagrams/" | append: page.t-diagram | relative_url }}" style="margin: 0 auto; display:block; width: 50%;padding-top:10px;">
-{% endif %}
-
-  </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
