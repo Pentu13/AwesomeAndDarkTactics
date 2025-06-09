@@ -1,8 +1,141 @@
 <div class="sidenav">
     <span>All Tags</span>
     
-    {% assign my-tags = site.tags | sort %}
-    {% for tag in my-tags %}
-        <a href="{{ "tags/" | append: tag[0] | append: ".html" | relative_url }}">{{ tag[0] }}</a></li>
+    {% assign all-tags = site.tags | sort %}
+    {% for tag in all-tags %}
+        <div class="tag-section">
+            <div class="tag-header">
+                <button class="toggle-btn" onclick="toggleTactics(this)">▶</button>
+                <a href="{{ "tags/" | append: tag[0] | append: ".html" | relative_url }}" class="tag-title">
+                    {{ tag[0] }}
+                </a>
+            </div>
+            <div class="tactic-list" style="display: none;">
+                {% for post in tag[1] %}
+                    <a href="{{ post.url | relative_url }}" class="tactic-link">
+                        {{ post.title }}
+                    </a>
+                    <div class="tactic-divider"></div>
+                {% endfor %}
+            </div>
+        </div>
     {% endfor %}
 </div>
+
+<style>
+.sidenav {
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 80px;
+    margin-left: 0;
+    left: 48px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+    bottom: 20px;
+    overflow-y: scroll;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav span {
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+.tag-section {
+    margin: 8px 0;
+}
+
+.tag-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0 4px;
+    font-size: 12px;
+    transition: transform 0.2s;
+}
+
+.toggle-btn:hover {
+    color: #2196F3;
+}
+
+.toggle-btn.expanded {
+    transform: rotate(90deg);
+}
+
+.tag-title {
+    font-weight: bold;
+    padding: 6px 8px 4px 0;
+    color: #2196F3;
+    flex-grow: 1;
+}
+
+.tactic-list {
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.tactic-link {
+    font-size: 14px;
+    padding: 1px 0;
+    color: #000;
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.tactic-link:hover {
+    color: #064579;
+}
+
+.tag-title:hover {
+    color: #064579;
+}
+
+.page-content {
+    margin-left: 240px;
+    transition: margin-left 0.3s;
+    padding-top: 110px;
+}
+
+/* Divider between tactics */
+.tactic-divider {
+    height: 1px;
+    background: #ddd;
+    margin: 2px 0 2px 0;
+    width: 90%;
+    align-self: center;
+}
+</style>
+
+<script>
+function toggleTactics(button) {
+    const tacticList = button.parentElement.nextElementSibling;
+    const isExpanded = tacticList.style.display !== 'none';
+    
+    if (isExpanded) {
+        tacticList.style.display = 'none';
+        button.classList.remove('expanded');
+    } else {
+        tacticList.style.display = 'block';
+        button.classList.add('expanded');
+    }
+}
+</script>
