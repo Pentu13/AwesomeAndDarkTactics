@@ -3,8 +3,8 @@ name: Move Validated Posts
 on:
   push:
     branches:
-      - main
       - test-tactic
+    
 
 permissions:
   contents: write
@@ -16,40 +16,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Move validated tactics
+      - name: Move validated tactics to category subfolders
         run: |
           mkdir -p docs/_posts
-          if [ -d docs/_new_posts ]; then
-            mv docs/_new_posts/* docs/_posts/ 2>/dev/null || true
-          fi
-
-      - name: Ensure category files exist
-        run: |
-          for file in docs/_posts/*.md docs/_posts/*.markdown; do
+          shopt -s nullglob
+          for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
             [ -e "$file" ] || continue
-            # Extract categories from YAML front matter
-            categories=$(awk '/^categories:/,/^[^ ]/' "$file" | grep -v '^categories:' | sed 's/^- //' | tr -d '\r')
-            for category in $categories; do
-              catfile="docs/categories/${category}.md"
-              if [ ! -f "$catfile" ]; then
-                cat <<EOF > "$catfile"
-cat <<EOF > "$catfile"
----
-category-name: "$category"
-category-description: "Description for $category"
-category-type: ""
----
-EOF
-                echo "Created category file: $catfile"
-              fi
-            done
+            # Extract the first category from YAML front matter
+            category=$(awk '/^categories:/ {getline; gsub(/^- /, "", $0); print $0; exit}' "$file" | tr -d '\r')
+            if [ -z "$category" ]; then
+              echo "No category found in $file, skipping."
+              continue
+            fi
+            mkdir -p "docs/_posts/$category"
+            mv "$file" "docs/_posts/$category/"
+            echo "Moved $file to docs/_posts/$category/"
           done
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/_posts docs/categories
+          git add docs/_posts
           git rm -r docs/_new_posts || true
-          git commit -m "Move validated tactics to _posts and ensure category files" || echo "No changes to commit"
+          git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
           git push
