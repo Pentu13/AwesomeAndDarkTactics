@@ -1,23 +1,22 @@
 ---
 layout: tactic
-title: Awesome Tactic Template
-tags:
-  - template
-t-sort: Awesome Tactic
-t-type: Architectural Tactic or Software Practice
-categories: templates
-t-description: Description of how to execute and apply the tactic to the related artifact
-t-participant: The participant that should be applying the tactic
-t-artifact: The (software) artifact the tactic should be applied to
-t-context: The context in which the artifact is considered
-t-feature: The feature of the artifact
-t-intent: The intent or goal of this tactic
-t-targetQA: The target quality attribute of this tactic
-t-relatedQA: Other related quality attributes that this tactic can also effect
-t-measuredimpact: The metric used to measure the impact and/or the actual measured impact on the artifact after applying the tactic
-t-source: The source of this tactic definition
-t-source-doi: the DOI of the source
-t-diagram: template_awesome_tactic.png
-t-intentmeasure: <Unavailable>
-t-countermeasure: <Unavailable>
+title: ""                # [REQUIRED] Short, descriptive name for the tactic
+tags: []                 # [OPTIONAL] List of tags, e.g., [template, awesome tactic]
+t-sort: "Awesome Tactic" # [REQUIRED] Should be "Awesome Tactic"
+t-type: ""               # [REQUIRED] E.g., Architectural Tactic, Software Practice
+categories: []           # [REQUIRED] List of categories, e.g., [templates]
+t-description: ""        # [REQUIRED] What does this tactic do?
+t-participant: ""        # [REQUIRED] Who applies this tactic?
+t-artifact: ""           # [REQUIRED] What artifact does this tactic apply to?
+t-context: ""            # [REQUIRED] Where/when is this tactic applied?
+t-feature: ""            # [REQUIRED] What feature of the artifact?
+t-intent: ""             # [REQUIRED] What is the goal of this tactic?
+t-targetQA: ""           # [OPTIONAL] Target quality attribute
+t-relatedQA: ""          # [OPTIONAL] Other related quality attributes
+t-measuredimpact: ""     # [OPTIONAL] Measured impact
+t-source: ""             # [REQUIRED] Reference or source
+t-source-doi: ""         # [OPTIONAL] DOI or URL for the source
+t-diagram: "<Unavailable>" # [OPTIONAL] Diagram filename or <Unavailable>
+t-intentmeasure: "<Unavailable>" # [OPTIONAL] How is the intent measured?
+t-countermeasure: "<Unavailable>" # [OPTIONAL] How to counter this tactic?
 ---

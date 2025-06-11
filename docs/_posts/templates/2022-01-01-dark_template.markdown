@@ -1,23 +1,22 @@
 ---
 layout: tactic
-title: Dark Tactic Template
-tags:
-  - template
-t-sort: Dark Tactic
-t-type: Unsustainable Pattern
-categories: templates
-t-description: Description of how to execute and apply the tactic to the related artifact
-t-participant: The participant applying the tactic
-t-artifact: The (software) artifact the tactic should be applied to
-t-context: The context in which the artifact is considered
-t-feature: The feature of the artifact
-t-intent: The intent or goal of this tactic
-t-intentmeasure: The metric used to measure the impact and/or the actual measured impact on the artifact after applying the tactic
-t-countermeasure: How to counter this unsustainable pattern
-t-source: The source of this tactic definition
-t-source-doi: the DOI of the source
-t-diagram: template_dark_tactic.png
-t-targetQA: <Unavailable>
-t-relatedQA: <Unavailable>
-t-measuredimpact: <Unavailable>
+title: ""                # [REQUIRED] Short, descriptive name for the tactic
+tags: []                 # [OPTIONAL] List of tags, e.g., [template, dark tactic]
+t-sort: "Dark Tactic"    # [REQUIRED] Should be "Dark Tactic"
+t-type: ""               # [REQUIRED] E.g., Unsustainable Pattern, Anti-pattern
+categories: []           # [REQUIRED] List of categories, e.g., [templates]
+t-description: ""        # [REQUIRED] What does this tactic do?
+t-participant: ""        # [REQUIRED] Who applies this tactic?
+t-artifact: ""           # [REQUIRED] What artifact does this tactic apply to?
+t-context: ""            # [REQUIRED] Where/when is this tactic applied?
+t-feature: ""            # [REQUIRED] What feature of the artifact?
+t-intent: ""             # [REQUIRED] What is the goal of this tactic?
+t-intentmeasure: ""      # [OPTIONAL] How is the intent measured?
+t-countermeasure: ""     # [OPTIONAL] How to counter this pattern?
+t-source: ""             # [REQUIRED] Reference or source
+t-source-doi: ""         # [OPTIONAL] DOI or URL for the source
+t-diagram: "<Unavailable>" # [OPTIONAL] Diagram filename or <Unavailable>
+t-targetQA: "<Unavailable>" # [OPTIONAL] Target quality attribute
+t-relatedQA: "<Unavailable>" # [OPTIONAL] Other related quality attributes
+t-measuredimpact: "<Unavailable>" # [OPTIONAL] Measured impact
 ---
