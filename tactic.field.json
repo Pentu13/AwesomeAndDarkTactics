@@ -11,7 +11,9 @@
         },
         "tags": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+                "type": "string"
+            },
             "description": "example-tag-1 example-tag-2 example-tag-3",
             "default": []
         },
@@ -26,9 +28,12 @@
             "default": "<Unavailable>"
         },
         "categories": {
-            "type": "string",
-            "description": "example-category",
-            "default": "<Unavailable>"
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "example-category-1, example-category-2",
+            "default": []
         },
         "t-description": {
             "type": "string",
