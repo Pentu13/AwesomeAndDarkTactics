@@ -7,7 +7,7 @@ tags:
 t-sort: "Awesome Tactic"
 t-type: "Sustainable tactic"
 categories:
-  - cloud-csnodnomputing
+  - cloud-computing
 t-description: "This is a test tactic for validation."
 t-participant: "Tester"
 t-artifact: "Test Artifact"

@@ -27,7 +27,7 @@ Hi! These are instructions for the maintainer of the archive.
 5. After your tactic passes validation and your pull request is merged, it will be automatically moved from `docs/_new_posts` to `docs/_posts` by our automation. You do not need to move the file manually.
 
 ## Automated Validation
-Each time a tactic is submitted via pull request, an automated validation is done to see whether required field are filled in and checking for correct formatting. If the submission is missing required information or has errors with the formatting, you will get notified in form of a failure in the GitHub Actions tab for your pull request.
+Each time a tactic is submitted via pull request, an automated validation is done to see whether required field are filled in and checking for correct formatting. If the submission is missing required information or has errors with the formatting or naming, you will get notified in form of a failure in the GitHub Actions tab for your pull request.
 Please review and fix any errors before requesting review.
 
 
