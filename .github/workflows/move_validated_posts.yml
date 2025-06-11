@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - test-tactic
-      - main
 
 permissions:
   contents: write
@@ -22,12 +21,14 @@ jobs:
           shopt -s nullglob
           for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
             [ -e "$file" ] || continue
-            # Robustly extract the first category from YAML front matter
+            # Robustly extract the first category from YAML front matter and trim whitespace/dash
             category=$(awk '
               /^categories:/ {in_categories=1; next}
-              in_categories && /^ *- / {gsub(/^- /, "", $0); print $0; exit}
+              in_categories && /^ *- / {
+                sub(/^ *- /, "", $0); print $0; exit
+              }
               in_categories && NF && !/^ / {in_categories=0}
-            ' "$file" | tr -d '\r')
+            ' "$file" | xargs)
             if [ -z "$category" ]; then
               echo "No category found in $file, skipping."
               continue
