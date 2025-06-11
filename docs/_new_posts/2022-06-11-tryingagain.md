@@ -9,7 +9,7 @@ t-type: "Sustainable tactic"
 categories:
   - cloud-computing
 t-description: "This is a test tactic for validation."
-t-participant: "Tester"
+t-participant: "Testerdd"
 t-artifact: "Test Artifact"
 t-context: "Testing"
 t-feature: "Test Feature"

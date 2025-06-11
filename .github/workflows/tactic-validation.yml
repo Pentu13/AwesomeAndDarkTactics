@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - test-tactic
-    paths:
-      - 'docs/_new_posts/**'
-      - 'tactic.field.json'
-      - 'validator_new_posts.js'
+  pull_request:
+    branches:
+      - test-tactic
 
 permissions:
   contents: read
