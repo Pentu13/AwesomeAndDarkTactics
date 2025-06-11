@@ -8,8 +8,14 @@ const ajv = new Ajv({ useDefaults: true });
 const validate = ajv.compile(schema);
 
 const inputDir = './docs/_new_posts';
+const categoriesDir = './docs/categories';
 
 let errors = [];
+
+// Get all valid category names (without .md extension)
+const existingCategories = fs.readdirSync(categoriesDir)
+  .filter(f => f.endsWith('.md'))
+  .map(f => f.replace(/\.md$/, ''));
 
 function processDir(dir) {
     const files = fs.readdirSync(dir);
@@ -25,8 +31,6 @@ function processDir(dir) {
             // DO NOT normalize types before validation!
             // Only do minimal pre-processing if absolutely necessary (e.g., YAML quirks)
             // For tags, if you want to allow both array and space-separated string in YAML:
-            // But for strict validation, comment out the following block:
-            
             if (Array.isArray(data.tags)) {
                 // ok
             } else if (typeof data.tags === 'string') {
@@ -34,7 +38,23 @@ function processDir(dir) {
             } else {
                 data.tags = [];
             }
-            
+
+            // CATEGORY EXISTENCE CHECK
+            if (data.categories) {
+                let cats = data.categories;
+                if (typeof cats === 'string') cats = [cats];
+                if (Array.isArray(cats)) {
+                    cats.forEach(cat => {
+                        if (!existingCategories.includes(cat)) {
+                            errors.push(`Category "${cat}" in ${file} does not exist in docs/categories/`);
+                        }
+                    });
+                } else {
+                    errors.push(`Categories field in ${file} is not a string or array`);
+                }
+            } else {
+                errors.push(`No categories field found in ${file}`);
+            }
 
             // Validate the raw data as parsed from YAML
             const valid = validate(data);

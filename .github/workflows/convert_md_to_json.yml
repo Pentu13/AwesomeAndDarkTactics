@@ -1,17 +1,17 @@
 name: Convert Markdown to JSON
 
 on:
-  push:
-    paths:
-      - 'docs/_posts/**.md'
-      - 'docs/_posts/**.markdown'
-  pull_request:
-    paths:
-      - 'docs/_posts/**.md'
-      - 'docs/_posts/**.markdown'
+  workflow_run:
+    workflows: ["Move Validated Posts"]
+    types:
+      - completed
+
+permissions:
+  contents: write
 
 jobs:
   convert:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,8 +28,10 @@ jobs:
       - name: Convert Markdown to JSON
         run: node convert.js
 
-      - name: Upload converted JSON (optional)
-        uses: actions/upload-artifact@v4
-        with:
-          name: converted-tactics
-          path: converted-tactics/
+      - name: Commit and push converted JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add converted-tactics/
+          git commit -m "Update converted JSON after tactic move" || echo "No changes to commit"
+          git push

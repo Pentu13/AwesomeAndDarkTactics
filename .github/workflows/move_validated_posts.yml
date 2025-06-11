@@ -1,9 +1,10 @@
 name: Move Validated Posts
 
 on:
-  push:
-    branches:
-      - test-tactic
+  workflow_run:
+    workflows: ["Validate New Posts"]
+    types:
+      - completed
 
 permissions:
   contents: write
