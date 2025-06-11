@@ -3,7 +3,6 @@ name: Move Validated Posts
 on:
   push:
     branches:
-      - main
       - test-tactic
 
 jobs:
