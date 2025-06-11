@@ -24,6 +24,14 @@ jobs:
       - name: Convert Markdown to JSON
         run: node convert.js
 
+      - name: Commit and push converted JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add converted-tactics/
+          git commit -m "Update converted JSON after tactic move" || echo "No changes to commit"
+          git push
+
       - name: Upload converted JSON (optional)
         uses: actions/upload-artifact@v4
         with:
