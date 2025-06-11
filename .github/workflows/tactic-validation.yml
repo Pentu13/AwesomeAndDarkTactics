@@ -3,10 +3,10 @@ name: Validate New Tactics
 on:
   push:
     branches:
-      - test-tactic
+      - main
   pull_request:
     branches:
-      - test-tactic
+      - main
 
 permissions:
   contents: read
