@@ -1,24 +1,27 @@
 name: Validate New Tactics
-on: 
-    pull_request:
-        paths:
-            - 'docs/_new_posts/**'
-            - 'tactic.field.json'
-            - 'validator_new_posts.js'
 
+on:
+  push:
+    branches:
+      - test-tactic
+    paths:
+      - 'docs/_new_posts/**'
+      - 'tactic.field.json'
+      - 'validator_new_posts.js'
+
+permissions:
+  contents: read
 
 jobs:
-    validate:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-            - name: Set up Node.js
-              uses: actions/setup-node@v4
-              with:
-                node-version: '20'
-            
-            - name: Install dependencies
-              run: npm install
-            
-            - name: Run validation script
-              run: node validator_new_posts.js
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run validation script
+        run: node validator_new_posts.js

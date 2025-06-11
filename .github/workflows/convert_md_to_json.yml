@@ -16,18 +16,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Install dependencies
         run: npm install
-
       - name: Convert Markdown to JSON
         run: node convert.js
-
       - name: Commit and push converted JSON
         run: |
           git config --global user.name "github-actions[bot]"
