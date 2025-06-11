@@ -21,7 +21,7 @@ jobs:
           shopt -s nullglob
           for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
             [ -e "$file" ] || continue
-            # Robustly extract the first category from YAML front matter and trim whitespace/dash
+            # Extract and trim the first category
             category=$(awk '
               /^categories:/ {in_categories=1; next}
               in_categories && /^ *- / {
