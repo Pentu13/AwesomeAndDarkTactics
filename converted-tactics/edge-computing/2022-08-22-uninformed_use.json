@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "Nowadays, there are a lot of applications that are very easy to use but act to some extent as a black box for the user who has no idea about what data the application gathers about herself and/or what technology it uses. This has consequences on social sustainability: first the user may not be aware of what information is available about her or what consequences her actions may have, but also she does not feel the need to know more as it is just so easy to use. As the edge computing paradigm develops and new applications emerge, it is going to become more complicated to know what data is gathered and where it is stored.",
   "t-participant": "end-user, edge-user, policy makers",
   "t-artifact": "Technology ",

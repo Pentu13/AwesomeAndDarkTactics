@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "Edge devices are by default considered as being always on even when they do nothing. This causes energy waste, but enables real-time services (like in-hospital patient monitoring or cloud gaming) anytime, or at least when needed.",
   "t-participant": "edge-provider ",
   "t-artifact": "Infrastructure ",

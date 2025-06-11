@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Different machine learning algorithms have different levels of energy consumption and computational power. For example, the K-nearest neighbor (KNN) algorithm has much lower energy consumption than the ensemble method Random Forest (RF) (Verdecchia et al., 2022). High energy consumption does not necessarily mean that those algorithms perform better or achieve higher accuracy levels than low-energy algorithms.",
   "t-participant": "Data Scientist",
   "t-artifact": "Algorithm",

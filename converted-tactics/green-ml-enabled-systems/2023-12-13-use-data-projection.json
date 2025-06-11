@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Data projection means transforming data into a lower-dimensional embedding and using data to optimize projection parameters. Reducing the dimensionality of input data shrinks the dimensionality of the deep neural network (DNN), which leads to improved performance of the model. Using data projection as a preprocessing step can result in energy improvements without sacrificing performance or accuracy.",
   "t-participant": "Data Scientist",
   "t-artifact": "Data",

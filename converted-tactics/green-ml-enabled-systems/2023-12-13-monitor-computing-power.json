@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Estimating and calculating the energy footprint of a machine learning model can help to reduce the computational power of ML models. Monitoring the energy consumption of a ML model in the long term helps to identify those components where energy is being inefficiently utilized. This can serve as a starting point for making improvements to reduce energy consumption. There has been a lack of easy-to-use tools to do that, but recently  researchers have provided frameworks for how to estimate or calculate the energy footprint of machine learning.",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Model",

@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Energy-aware scheduling refers to a strategy that optimizes the scheduling of machine learning tasks. It dynamically schedules tasks or processes based on the current energy requirements and system conditions. The objective of an energy-aware dynamic scheduling policy is to make efficient use of available computational resources.",
   "t-participant": "Software Designer",
   "t-artifact": "<Unavailable>",

@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Machine learning models may experience drifts that affect their functionality. In these cases, the models must adapt to the drift. Informed adaptation refers to a method of adapting the ML model only when drift is detected. Therefore, the frequency of adaptation is smaller than in blind, periodic adaptation. Informed adaptation reduces unnecessary adaptations, which consequently saves energy.",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Model",

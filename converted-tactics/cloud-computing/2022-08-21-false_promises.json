@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "cloud-computing",
+  "categories": [
+    "cloud-computing"
+  ],
   "t-description": "Due to the high level of market competition, cloud providers promise applications benefits that do not always materialize. As an example, many cloud providers present their offer as free of charge. At first glance, this seems to be correct, as no money is involved in the first subscription. In the long term however, the cloud users end up paying either directly for optional (but almost unavoidable) features or once the trial period is passed, or indirectly (e.g., with their data). This is often not in the interest of the user and is therefore not sustainable.",
   "t-participant": "cloud-user, cloud-provider",
   "t-artifact": "Cloud technology/service",

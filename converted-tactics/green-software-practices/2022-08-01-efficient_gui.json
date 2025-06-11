@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Efficient UI can let the user complete a task quickly. An inefficient UI can increase the application complexity, and consequently the energy consumption.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

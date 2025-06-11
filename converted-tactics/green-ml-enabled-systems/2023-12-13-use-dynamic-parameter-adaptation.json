@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Dynamic parameter adaptation means that the hyperparameters of a machine learning model are dynamically adapted based on the input data, instead of determining the exact parameters values in the algorithm. For example, García-Martín et al (2021) used an nmin adaptation method for very fast decision trees. The nmin method allows the algorithm to grow faster in those branches where there is more confidence in creating a split and delaying the split on the less confident branches. This method resulted in decreased energy consumption.",
   "t-participant": "Data Scientist",
   "t-artifact": "Algorithm",

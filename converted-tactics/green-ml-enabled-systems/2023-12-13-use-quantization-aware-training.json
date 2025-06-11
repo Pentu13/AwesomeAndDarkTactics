@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Quantization-aware training is a technique used to train neural networks to convert data types to lower precision. The idea is to use fixed-point or integer representations instead of the more commonly used higher-precision floating-point representations. This improves the performance and energy efficiency of the model in federated learning.",
   "t-participant": "Data Scientist",
   "t-artifact": "Model",

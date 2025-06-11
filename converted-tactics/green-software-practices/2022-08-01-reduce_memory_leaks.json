@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "With memory leaks the application can stall or crash. This unpredictable behavior can alter the energy consumption and, more generally, they must always be avoided.",
   "t-participant": "Software application developers",
   "t-artifact": "C application in which we induce a memory leak (like malloc() )",

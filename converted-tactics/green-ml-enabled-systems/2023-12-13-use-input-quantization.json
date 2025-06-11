@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Input quantization in machine learning refers to the process of converting data to a smaller precision (e.g., reduce number of bits to represent data). For example, Abreu et al (2022) investigated different input widths (bits) and found that 10-bit precision is sufficient for achieving accuracy in models, and that increasing the number of bits does not contribute to accuracy. Therefore, using higher precision is a waste of resources. Additionally, using precise data values through input quantization can even have a positive impact on the machine learning model by reducing overfitting.",
   "t-participant": "Data Scientist",
   "t-artifact": "Data",

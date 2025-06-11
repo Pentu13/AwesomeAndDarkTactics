@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Complex queries can be performed to increase the responsiveness of the application at the expense of energy efficiency. It can be useful to avoid unnecessary “ORDER BY” or to use indexes.",
   "t-participant": "Software application developers",
   "t-artifact": "MySQL Server + WIkipedia DB",

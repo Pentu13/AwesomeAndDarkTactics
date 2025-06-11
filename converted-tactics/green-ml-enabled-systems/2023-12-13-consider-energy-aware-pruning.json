@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "In machine learning, pruning refers to the process of reducing the complexity and size of a ML model by removing unnecessary or less important components, such as weight. In energy-aware pruning, energy consumption of a neural network is used to guide the pruning process to optimize for the best energy efficiency. With the estimated energy for each layer in a CNN model, the algorithm performs layer-by-layer pruning, starting from the layers with the highest energy consumption to the layers with the lowest energy consumption. For pruning each layer, it removes the weights that have the smallest joint impact on the output feature maps",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Algorithm",

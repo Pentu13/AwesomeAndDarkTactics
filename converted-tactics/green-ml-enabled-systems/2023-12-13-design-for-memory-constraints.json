@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Model training requires memory, and sometimes memory leaks and OOM (out of memory) errors may occur during that process. If that happens, the knowledge gained during the prior training process is lost. By considering memory availability constraints and addressing possible OOM exceptions, the system can be designed to operate within the available memory limits. It reduces the likelihood of errors and prevents unnecessary energy consumption (Shanbhag at al 2022).",
   "t-participant": "Data Scientist",
   "t-artifact": "Memory",

@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "Since the energy consumption of an edge computing centre is usually not very high (because of its small size and the type of devices used), there is currently no incentive for the provider to optimize resource utilization in order to save energy.",
   "t-participant": "edge-provider, edge-user",
   "t-artifact": "Infrastructure",

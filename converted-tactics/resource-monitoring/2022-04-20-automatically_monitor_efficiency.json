@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "resource-monitoring",
+  "categories": [
+    "resource-monitoring"
+  ],
   "t-description": "Automatically monitoring the performance of software provides insights into its behavior and highlights the sections to focus on for optimization. Monitoring the energy consumption is a prerequisite for optimizing a workload for energy efficiency.",
   "t-participant": "Cloud consumer",
   "t-artifact": "Cloud workloads",

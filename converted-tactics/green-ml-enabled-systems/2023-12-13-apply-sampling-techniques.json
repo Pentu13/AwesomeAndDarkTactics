@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "The size of input data has a positive correlation with the energy consumption of computing. Therefore, reducing the size of input data can have a positive impact on energy-efficiency of machine learning. Reducing input data can be done by using only a subset of the original input data. This is called sampling. There are different ways of conducting sampling (e.g., simple random sampling, systematic sampling), As an example, Verdecchia et al. (2022) used stratified sampling, which means randomly selecting data points from homogeneous subgroups of the original dataset.",
   "t-participant": "Data Scientist",
   "t-artifact": "Data",

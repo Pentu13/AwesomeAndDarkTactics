@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Enhancing sparsity of a machine learning model means reducing the number of model parameters or setting their values to zero. For example, weight sparsification involves identifying and removing unnecessary or less important weights in a neural network. Enhancing model sparsity decreases the complexity of the model and consequently reduces requirements for storage and memory. Therefore, it also results in lower power consumption.",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Algorithm",

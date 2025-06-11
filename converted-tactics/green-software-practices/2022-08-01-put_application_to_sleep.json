@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "In order to save energy the application can be put in sleep mode. An event, a signal, or an interrupt can resume the application.",
   "t-participant": "Software application developers",
   "t-artifact": "Apache WebServer",

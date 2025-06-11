@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "A large number of data features can lead to high computing power requirements for training and inference. Typi- cally, machine learning scenarios involve a huge number of features or variables that describe the input data. However, not all these features are necessary for the model to make accurate predictions. Therefore, reducing these data features can lead to improved energy efficiency while still maintaining accuracy. Reducing the number of input features can be achieved by selecting only a subset the available data features.",
   "t-participant": "Data Scientist",
   "t-artifact": "Data",

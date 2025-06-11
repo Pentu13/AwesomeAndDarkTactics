@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "cloud-computing",
+  "categories": [
+    "cloud-computing"
+  ],
   "t-description": "There are multiple security concerns in cloud computing. One of them, is when the cloud user grants unsupervised access to her own device. This may lead to sensitive information leak if either the cloud provider misuses his access rights or does not provide enough security to prevent third-party attacks. These two issues are related to two of the top threats to cloud computing.",
   "t-participant": "cloud-user, cloud-provider",
   "t-artifact": "Cloud utility services (automatic updates)",

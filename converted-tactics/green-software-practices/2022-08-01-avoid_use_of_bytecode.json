@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "The virtual machine interpretation of byte code can make the application energy inefficient.",
   "t-participant": "Software application developers",
   "t-artifact": "C/C++ vs. Java",

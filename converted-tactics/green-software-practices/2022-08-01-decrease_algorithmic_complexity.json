@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Despite different algorithms can complete the same task, the way the task is performed can be totally different. Reducing the algorithm complexity can lead to save energy.",
   "t-participant": "Software application developers",
   "t-artifact": "Sorting algorithms with complex structures",

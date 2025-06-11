@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "To date, end users lack visibility on their impact, e.g., the energy footprint of their use of digital services. By being unaware of their negative impact, they have no incentives to change their behavior towards a more sustainable consumption. Hindering awareness, however, can be a (malicious) instrument for e.g., edge providers (and service providers in general) to bring additional revenues based on impact invisibility.",
   "t-participant": "end-user, edge-user, edge-provider, government",
   "t-artifact": "Application/service",

@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": " Edge computing infrastructures are distributed across multiple actors and include a variety of devices. Moreover, the edge applications are also very diverse and do not require the same type of service from the edge provider. This creates fragmentation and silo thinking of different natures. Four types of such silos have been identified: application-specific, software-stack-specific, data source-specific, and provider-specific.",
   "t-participant": "end-user, society",
   "t-artifact": "Infrastructure ",

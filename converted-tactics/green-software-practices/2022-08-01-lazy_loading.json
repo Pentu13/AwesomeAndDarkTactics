@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "It increases performance deferring the object initialization until it is really needed.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

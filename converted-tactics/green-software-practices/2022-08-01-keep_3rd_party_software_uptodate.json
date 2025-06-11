@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Updated 3rd party software can improve performance, quality, security and energy efficiency.",
   "t-participant": "Software application developers",
   "t-artifact": "Octave",

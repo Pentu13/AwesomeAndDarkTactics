@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "The emissions of machine learning are related to used hardware. This is why using energy-efficient hardware to run machine models can reduce the power consumption of models. Energy-efficient hardware can include low-energy components. For example, the Tensor Processing Units (TPUs) developed by Google are seen as an energy-efficient alternative to CPUs and GPUs.",
   "t-participant": "Software Designer",
   "t-artifact": "Hardware",

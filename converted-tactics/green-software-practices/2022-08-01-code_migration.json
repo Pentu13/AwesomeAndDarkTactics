@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "To increase energy efficiency in devices where computation can be energy consuming, it is worth using software agents to move the task to another environment and gathering results when the computation is completed.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

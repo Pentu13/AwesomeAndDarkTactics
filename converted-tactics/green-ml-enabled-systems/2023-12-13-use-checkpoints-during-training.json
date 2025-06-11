@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Training is an energy-intensive stage of the machine learning life cycle, which may take long periods of time. Sometimes a failure or hardware error can terminate the training process before it is completed. In those cases, the training process must be started from the beginning. The use of checkpoints however can save the trained model in regular intervals and in case of a premature termination, the training process can continue at the last checkpoint (Shanbhag et al., 2022). Using checkpoints during training improves the robustness of a ML system.",
   "t-participant": "Data Scientist",
   "t-artifact": "Memory",

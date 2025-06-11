@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Buffering I/O operations increases energy efficiency; the OS can power down I/O devices when not used.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

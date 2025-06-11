@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Machine learning models require reading and writing enormous amounts of data in the ML workflow. Reading data means retrieving information from storage, while writing data means storing or updating the information. These operations may increase unnecessary data movements and memory usage, which influence the energy consumption of computing. To avoid non-essential referencing of data, reading and writing operations must be designed carefully.",
   "t-participant": "Software Designer",
   "t-artifact": "ML Model",

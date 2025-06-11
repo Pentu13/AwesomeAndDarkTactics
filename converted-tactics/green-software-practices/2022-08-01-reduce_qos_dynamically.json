@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "The application has to be able to scale this execution in case of low-power situations.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

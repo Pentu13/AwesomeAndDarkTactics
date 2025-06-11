@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "resource-adaptation",
+  "categories": [
+    "resource-adaptation"
+  ],
   "t-description": "The currently most prominent deployment paradigms are VM, container, and serverless architectures. Choosing the fitting paradigm for the workload will optimize the performance. There is no one-size-fits-all solution regarding choosing the fitting deployment paradigm. A serverless architecture ensures that services are automatically shut off when they are finished. Moreover, when using a serverless architecture the service utilization is much lower compared to using a VM as the overhead is much smaller. This is expected to have a positive effect on the energy consumption. A possible negative effect of a serverless architecture on energy efficiency occurs in the scenario where the service is frequently called but not constantly on. Starting the service up and down could consume relatively more energy compared to spinning one VM that is constantly on and frequently called. Little research has been conducted on the effect of the deployment paradigms on energy consumption.",
   "t-participant": "Cloud consumer",
   "t-artifact": "Cloud deployments (abstract)",

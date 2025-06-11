@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Apply built-in library functions in the machine learning model instead of writing custom implementations. The existing built-in library functions are usually optimized and well-tested, which is why they may have improved performance and energy efficiency compared to custom-made functions. These built-in libraries can be used for instance for tensor operations.",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Algorithm",

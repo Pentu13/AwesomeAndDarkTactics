@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "Similarly to cloud computing, the adoption of edge presents a risk of rebound effect, described in dark tactics efficiency trap and bloating. New technologies part of the edge paradigm are often presented as being more energy-efficient than their predecessors and hence more sustainable. However, as energy-efficient a technology may become, if the rebound in usage is substantial then the overall energy consumption may increase. This increased use may come from the services using the technology, e.g., transmitting 4K video on a device with a small screen just because it is possible, but with no (or negligible) increase in quality of service. It can also come from the technology itself. This is for example the case in 5G, where although a base station is four times more energy-efficient than its 4G counterpart, its total power consumption is still four times higher than a 4G base station (e.g., due to extra antennas required), in addition to the fact that more 5G base stations are needed compared to a 4G network.",
   "t-participant": "end-user, edge-user, edge-provider, 5G-network-provider",
   "t-artifact": "End-user application",

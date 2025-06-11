@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "An ICT system can always have positive and negative consequences which are either intended or unintended. Edge computing is no exception. The edge providers thus have the option of supposedly ignoring known negative consequences for society or the environment when launching their products on the market so that they can increase their profits.",
   "t-participant": "edge-user ",
   "t-artifact": "Application/service",

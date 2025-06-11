@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Storage and transportation of redundant data impacts energy efficiency.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

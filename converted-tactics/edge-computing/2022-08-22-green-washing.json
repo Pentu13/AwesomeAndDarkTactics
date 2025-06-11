@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "Edge-enabled applications with a positive impact on sustainability are sometimes mentioned, for example in the area of environmental monitoring or renewable energy management. Added to the common promises of the edge paradigm (more energy-efficient, more decentralized), there is a potential for greenwashing from ICT companies or lobbies, i.e., “the act of misleading consumers regarding the environmental practices of a company or the environmental benefits of a product or service” [14 ]. An example is the report published by the cooperation of ICT firms Global e-Sustainability Initiative predicting a saving of 20% of the world’s CO2 emissions thanks to ICT technologies from 2015 to 2030. This report has been relayed by many companies and in numerous press articles to highlight the reduction potential even though its methodology has been highly criticized.",
   "t-participant": "edge-provider, edge-user, innovation-driver",
   "t-artifact": "Technology",

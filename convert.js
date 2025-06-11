@@ -20,6 +20,13 @@ function fixDataToSchema(data, schema) {
         fixed.tags = [];
     }
 
+    // Categories preservation logic
+    if (typeof fixed.categories === 'string') {
+        fixed.categories = [fixed.categories];
+    } else if (!Array.isArray(fixed.categories)) {
+        fixed.categories = [];
+    }
+
     // Fill in missing fields with schema defaults
     for (const [key, prop] of Object.entries(schema.properties)) {
         if (!(key in fixed) || fixed[key] === undefined || fixed[key] === null || fixed[key] === '') {

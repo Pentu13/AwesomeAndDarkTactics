@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Layers of abstraction prevent the introduction of efficiency because no details from the underlying system are exposed.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

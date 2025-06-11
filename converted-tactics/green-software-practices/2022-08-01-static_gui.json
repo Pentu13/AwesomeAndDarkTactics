@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "Using dynamic animations in GUI are more energy expensive than static counterparts. In fact redrawing an image uses energy both in order to compute it, and in transmitting it to the screen.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

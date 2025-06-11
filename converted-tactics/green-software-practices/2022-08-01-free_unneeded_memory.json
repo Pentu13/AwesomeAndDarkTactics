@@ -6,7 +6,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Software Practice",
-  "categories": "green-software-practice",
+  "categories": [
+    "green-software-practice"
+  ],
   "t-description": "The use of unnecessary memory makes the memory consume more energy itself. It can also force the system to use virtual memory.",
   "t-participant": "Software application developers",
   "t-artifact": "<Unavailable>",

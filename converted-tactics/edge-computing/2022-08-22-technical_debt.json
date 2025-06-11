@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "When new technologies or business models are developed5 their adoption by the users is not automatic and require some efforts. Some users end up remaining in previous and outdated versions’/models’ ways of working that are less optimized, resulting in an extra resource consumption for the same use. The user either pays for the extra consumption and has an increased technical debt (unsustainable way) or makes the effort to adapt (sustainable way). There is work going on to describe the technical ebt issues related to serverless computing, which shows clearly the drawbacks of choosing the unsustainable way.",
   "t-participant": "edge-user",
   "t-artifact": "Application/service",

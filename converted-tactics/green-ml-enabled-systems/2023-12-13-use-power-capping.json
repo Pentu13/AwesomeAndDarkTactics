@@ -9,7 +9,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Power capping is a technique used to limit the amount of power consumed by a device or system, such as a CPU, GPU, or server. It involves setting a maximum power consumption threshold for the device, and dynamically adjusting the power usage to ensure that it stays below that threshold. This is typically done to manage the power consumption and heat dissipa- tion of a device, and to prevent it from exceeding the power budget of a data center or other power-limited environment.",
   "t-participant": "Software Designer",
   "t-artifact": "Hardware",

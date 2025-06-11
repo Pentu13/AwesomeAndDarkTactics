@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "edge-computing",
+  "categories": [
+    "edge-computing"
+  ],
   "t-description": "Digital exclusion happens when new technology that requires advanced or new infrastructure or devices is not going to be available for all, thus preventing a part of the target end users (either in different countries or inside the same country) to get access to services. The complexity of computing at the edge makes it increasingly difficult for edge providers to plan for and provision resources to meet the ongoing dramatic growth in demand. A strategy often adopted by edge providers is to focus only on a part of the potential users, typically those bringing highest revenues, hence widening the digital divide and contributing to a society that is socially unsustainable.",
   "t-participant": "edge-provider, government",
   "t-artifact": "Technology or specific services requiring specific HW/SW - depending on the type of exclusion",

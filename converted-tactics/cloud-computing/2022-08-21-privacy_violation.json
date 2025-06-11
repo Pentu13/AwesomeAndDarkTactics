@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "cloud-computing",
+  "categories": [
+    "cloud-computing"
+  ],
   "t-description": "The characteristics of cloud computing (e.g., remote data storage, platform sharing, service dynamic change, just to mention a few) make privacy protection particularly challenging. Privacy violation, however, regularly occurs purposely, when cloud providers e.g., do not comply with enterprise policies or legislation, or force/persuade users to give personal information against their will.",
   "t-participant": "end-user, cloud-user, cloud-provider",
   "t-artifact": "Cloud services",

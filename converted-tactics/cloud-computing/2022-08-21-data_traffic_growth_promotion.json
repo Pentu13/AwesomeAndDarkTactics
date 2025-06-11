@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "cloud-computing",
+  "categories": [
+    "cloud-computing"
+  ],
   "t-description": "One of the direct rebound effects of cloud migration, together with the dark tactics overconsumption and superfluous usages. By providing cheaper, less energy-intensive and easier-to-use technologies, the cloud computing paradigm tends to foster growth in data traffic and consumption and to enable the emergence of superfluous usages that were not possible before (e.g., using a navigation system on the phone although your car has one already built-in). This negates (at least partially) the promised energy savings. Cisco reveals evidences of such a traffic growth. The average traffic per capita per month was expected to grow from 12.9GB in 2016 to 35.5GB in 2021, while the number of Internet users would grow from 44% of the global population to 58% in the same period. This growth may not be caused solely by the shift to cloud computing but it remains an indicator of a potential rebound effect. Unfortunately, rebound and transformational effects are insufficiently discussed in the field and their multifaceted nature makes them hard to measure. Nonetheless, there exist definitions of rebound effects in cloud computing and frameworks to categorize them, paving the way to more precise assessment.",
   "t-participant": "cloud-user, cloud-provider",
   "t-artifact": "Data produced on end-devices",

@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "This tactic concerns setting a predetermined energy consumption threshold for the ML model optimization process. The optimization considers the energy consumption of the model during both the optimization and training phases. The objective is to train the model in a way that it stays within the specified energy consumption threshold. This approach views model optimization as an optimization problem, where for instance hyperparameters and the model itself are optimized based on the predetermined limits.",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Algorithm",

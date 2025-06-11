@@ -4,7 +4,9 @@
   "tags": [],
   "t-sort": "Dark Tactic",
   "t-type": "Unsustainable Pattern",
-  "categories": "cloud-computing",
+  "categories": [
+    "cloud-computing"
+  ],
   "t-description": "By migrating their digital assets to a remote cloud provider, cloud users effectively give away the control over the definition of their energy consumption strategies. Cloud providers have hence the responsibility to demonstrate to their customers, how they enable which strategies; and the extent to which their assets contribute by providing significant SLAs and metrics/indicators that cloud users can use e.g., for decision making. At the same time, cloud providers acquire the power to decide to invest in such strategies, or not. Unfortunately, by feeding myths about the energy optimizations automatically coming with economies of scale, energy control results to be regularly misused.",
   "t-participant": "cloud-user, cloud-provider",
   "t-artifact": "Data center",

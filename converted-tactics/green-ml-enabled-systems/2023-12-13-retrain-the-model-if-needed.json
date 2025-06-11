@@ -7,7 +7,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Retraining a model refers to the process of updating or modifying an existing machine learning model. In the long term, concept drift may affect the accuracy of existing machine learning models. Retraining the model by for example training it again with new data is better than building it again in terms of sustainability.",
   "t-participant": "Data Scientist",
   "t-artifact": "Machine Learning Model",

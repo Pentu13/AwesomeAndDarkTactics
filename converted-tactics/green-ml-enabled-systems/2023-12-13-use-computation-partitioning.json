@@ -8,7 +8,9 @@
   ],
   "t-sort": "Awesome Tactic",
   "t-type": "Architectural Tactic",
-  "categories": "green-ml-enabled-systems",
+  "categories": [
+    "green-ml-enabled-systems"
+  ],
   "t-description": "Computation partitioning is the process of dividing the computations of a convolutional neural network (CNN) between a mobile client and a cloud server. The goal is to optimize energy consumption and efficiency. The NeuPart framework (Manasi et al 2023) is an example of a partitioning approach. NeuPart divides computational tasks between the mobile device (client) and the remote server or data center (cloud) in real time based on energy consumption. By offloading computationally intensive tasks to the cloud and executing lighter tasks locally, NeuPart resulted in significant energy savings of up to 52% in cloud-based computations.",
   "t-participant": "Software Designer",
   "t-artifact": "Neural Networks",
