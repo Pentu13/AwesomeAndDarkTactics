@@ -17,14 +17,20 @@ Hi! These are instructions for the maintainer of the archive.
 ## Adding a tactic
 
 1. If you want to create a new tactic for the archive, first follow the instructions on the "Contributions" page of the website. If you have followed the instructions or received a tactic from someone who wants to contribute, continue with the next step.
-1. Rename the markdown file (ending in `.md`) to: `YYYY-MM-DD-title.md` where `YYYY-MM-DD` specifies today's date (this will not be displayed in the archive, but is required by Jekyll to process the file) and `title` being the name of the tactic. The title may contain underscores for readability.
-1. If a model (ending in `.png`) was submitted alongside the tactic, rename the image file appropriately to match the tactic, and place the image file into the `docs/assets/diagrams` folder. In the markdown file of the corresponding tactic, copy the line below `t-source-doi` but before `---`. Replace the name `image` with the correct filename of the model.
+2. Rename the markdown file (ending in `.md`) to: `YYYY-MM-DD-title.md` where `YYYY-MM-DD` specifies today's date (this will not be displayed in the archive, but is required by Jekyll to process the file) and `title` being the name of the tactic. The title may contain underscores for readability.
+3. If a model (ending in `.png`) was submitted alongside the tactic, rename the image file appropriately to match the tactic, and place the image file into the `docs/assets/diagrams` folder. In the markdown file of the corresponding tactic, copy the line below `t-source-doi` but before `---`. Replace the name `image` with the correct filename of the model.
     ```
         t-diagram: "image.png"
     ```
-1. Place the markdown file into the `docs/_posts` folder.
-1. Commit the changes to the repository.
-1. The tactic should be shown in the archive.
+4. Place the markdown file into the `docs/_new_posts` folder for automated validation.
+
+5. After your tactic passes validation and your pull request is merged, it will be automatically moved from `docs/_new_posts` to `docs/_posts` by our automation. You do not need to move the file manually.
+
+## Automated Validation
+Each time a tactic is submitted via pull request, an automated validation is done to see whether required field are filled in and checking for correct formatting. If the submission is missing required information or has errors with the formatting, you will get notified in form of a failure in the GitHub Actions tab for your pull request.
+Please review and fix any errors before requesting review.
+
+
 
 **If the tactic uses a category or tags that were not previously used in the archive, additional files need to be added.**
 

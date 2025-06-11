@@ -32,7 +32,7 @@ To contribute a **new Awesome or Dark Tactic** to the archive, please follow the
 
 ### Template download
 
-* [Awesome Tactic template (.zip)]({{ "assets/templates/AwesomeTactic-template.zip" | relative_url }})
-* [Dark Tactic template (.zip)]({{ "assets/templates/DarkTactic-template.zip" | relative_url }})
+* [Awesome Tactic template (.zip)]({{ "assets/templates/awesome-tactic-template.zip" | relative_url }})
+* [Dark Tactic template (.zip)]({{ "assets/templates/dark-tactic-template.zip" | relative_url }})
 * [Awesome Tactic model template (.xml for diagrams.net)]({{ "assets/templates/awesome-tactic-diagram.xml" | relative_url }})
 * [Dark Tactic model template (.xml for diagrams.net)]({{ "assets/templates/dark-tactic-diagram.xml" | relative_url }})
