@@ -1,0 +1,54 @@
+name: Post Update Handler
+
+on:
+  push:
+    paths:
+      - 'docs/_posts/**/*.md'
+      - 'docs/_posts/**/*.markdown'
+  pull_request:
+    paths:
+      - 'docs/_posts/**/*.md'
+      - 'docs/_posts/**/*.markdown'
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      # First validate any new posts
+      - name: Validate new posts
+        run: node validator_new_posts.js
+        continue-on-error: true  # Don't fail if there are no new posts
+
+      # Fix markdown schema
+      - name: Fix markdown schema
+        run: node fix_markdown_schema.js
+
+      # Convert to JSON
+      - name: Convert markdown to JSON
+        run: node convert.js
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git add converted-tactics/
+          git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Update converted tactics JSON files" converted-tactics/
+          git push
