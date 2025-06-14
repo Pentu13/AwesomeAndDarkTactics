@@ -2,7 +2,7 @@
 layout: tactic
 title: Consider Transfer Learning
 tags:
-  - testtag
+  - testtag1
 t-sort: Awesome Tactic
 t-type: Architectural Tactic
 categories:
