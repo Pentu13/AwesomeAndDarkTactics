@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Environmental control giveaway",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "Introducing laws and regulations of the data center industry, e.g., awarding tax reductions against quantified energy optimizations; or following systematic cloud migration models and frameworks that help users analyze e.g., how detailed the SLAs are wrt. energy consumption.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-environmental_control_giveaway.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-environmental_control_giveaway.png",
+  "layout": "tactic"
 }

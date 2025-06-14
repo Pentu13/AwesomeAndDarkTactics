@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Lock-in",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "Standardization of cloud APIs and solutions that increase portability and interoperability",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-lock-in.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-lock-in.png",
+  "layout": "tactic"
 }

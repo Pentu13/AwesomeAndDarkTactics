@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Privacy violation",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "Due to the many recent scandals in various ICT industries, countermeasures are fast emerging, e.g., legislation. Another example would be to give back to users the power to decide what to share.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-privacy_violation.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-privacy_violation.png",
+  "layout": "tactic"
 }

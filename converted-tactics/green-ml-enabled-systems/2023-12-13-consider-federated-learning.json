@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Consider Federated Learning",
   "tags": [
     "machine-learning",
@@ -16,12 +15,13 @@
   "t-context": "Machine Learning",
   "t-feature": "Model Training",
   "t-intent": "Improve energy efficiency by applying federated learning to minimize data transfers, if applicable",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Minsu Kim, Walid Saad, Mohammad Mozaffari, and Merouane Debbah. 2021. On the Tradeoff between Energy, Precision, and Accuracy in Federated Quantized Neural Networks. In ICC 2022 - IEEE International Conference on Communications. 2194–2199.",
+  "t-source-doi": "https://doi.org/10.1109/ICC45855.2022.9838362",
   "t-targetQA": "Energy Efficiency",
   "t-relatedQA": "Accuracy",
   "t-measuredimpact": "<Unavailable>",
-  "t-source": "Minsu Kim, Walid Saad, Mohammad Mozaffari, and Merouane Debbah. 2021. On the Tradeoff between Energy, Precision, and Accuracy in Federated Quantized Neural Networks. In ICC 2022 - IEEE International Conference on Communications. 2194–2199.",
-  "t-source-doi": "https://doi.org/10.1109/ICC45855.2022.9838362",
   "t-diagram": "consider-federated-learning.png",
-  "t-intentmeasure": "<Unavailable>",
-  "t-countermeasure": "<Unavailable>"
+  "layout": "tactic"
 }

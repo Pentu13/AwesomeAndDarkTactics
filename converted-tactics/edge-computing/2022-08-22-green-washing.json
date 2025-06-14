@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Green-washing",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "Raise awareness about greenwashing, increase regulation or improve transparency of environmental reporting.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-green-washing.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-green-washing.png",
+  "layout": "tactic"
 }

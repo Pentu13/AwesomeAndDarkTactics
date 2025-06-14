@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Digital exclusion",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "Make trade-offs between the benefits of edge computing like reducing latency and energy consumption, and the investments needed to avoid digital exclusion. For example, in healthcare personalized home-care (hence at the edge) is meant to learn the profile of the patient and adapt for usability.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-digital_exclusion.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-digital_exclusion.png",
+  "layout": "tactic"
 }

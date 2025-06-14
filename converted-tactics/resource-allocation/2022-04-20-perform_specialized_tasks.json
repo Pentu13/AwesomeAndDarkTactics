@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Perform specialized tasks that occur infrequently in the cloud",
   "tags": [
     "cloud-principles",
@@ -16,12 +15,13 @@
   "t-context": "Migration from on-premise to cloud",
   "t-feature": "<Unavailable>",
   "t-intent": "To benefit from economies of scale in cloud, to reduce costs of purchasing specialized hardware",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Master Thesis “Architectural Tactics to Optimize Software for Energy Efficiency in the Public Cloud” by Sophie Vos",
+  "t-source-doi": "NA",
   "t-targetQA": "Cost-efficiency",
   "t-relatedQA": "Energy-efficiency",
   "t-measuredimpact": "<Unavailable>",
-  "t-source": "Master Thesis “Architectural Tactics to Optimize Software for Energy Efficiency in the Public Cloud” by Sophie Vos",
-  "t-source-doi": "NA",
-  "t-intentmeasure": "<Unavailable>",
-  "t-countermeasure": "<Unavailable>",
-  "t-diagram": "<Unavailable>"
+  "t-diagram": "<Unavailable>",
+  "layout": "tactic"
 }

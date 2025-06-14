@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Trust overhead",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "A first step would be to generalize the evaluation of the extra environmental cost (or at least the extra computation and communication required) of any such mechanisms and compare it with the concurrent approaches.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-trust_overhead.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-trust_overhead.png",
+  "layout": "tactic"
 }

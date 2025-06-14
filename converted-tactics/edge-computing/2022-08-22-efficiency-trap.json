@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Efficiency trap",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "To counter these two dark tactics at the service level, the concept of digital sufficiency should be envisioned to reflect upon the quantity of data that is relevant for a certain service/device combination. As a countermeasure regarding the technology itself, the telco providers are already investigating new antennas technologies, network architectures and roll-out strategies and improved base station implementations with energy-saving features for the 5G technology.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-efficiency-trap.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-efficiency-trap.png",
+  "layout": "tactic"
 }

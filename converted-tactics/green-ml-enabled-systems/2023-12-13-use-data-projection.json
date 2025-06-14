@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Use Data Projection",
   "tags": [
     "machine-learning",
@@ -16,12 +15,13 @@
   "t-context": "Machine Learning",
   "t-feature": "<Unavailable>",
   "t-intent": "Improve performance (and consequently energy efficiency) by projecting data into lower-dimensional embeddings",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Bita Darvish Rouhani, Azalia Mirhoseini, and Farinaz Koushanfar. 2016. DeLight: Adding Energy Dimension To Deep Neural Networks. In ISLPED ’16: Proceedings of the 2016 International Symposium on Low Power Electronics and Design. Association for Computing Machinery, New York, NY, USA, 112–117.",
+  "t-source-doi": "https://doi.org/10.1145/2934583.2934599",
   "t-targetQA": "Performance",
   "t-relatedQA": "Accuracy, Energy Efficiency",
   "t-measuredimpact": "<Unavailable>",
   "t-diagram": "use-data-projection.png",
-  "t-source": "Bita Darvish Rouhani, Azalia Mirhoseini, and Farinaz Koushanfar. 2016. DeLight: Adding Energy Dimension To Deep Neural Networks. In ISLPED ’16: Proceedings of the 2016 International Symposium on Low Power Electronics and Design. Association for Computing Machinery, New York, NY, USA, 112–117.",
-  "t-source-doi": "https://doi.org/10.1145/2934583.2934599",
-  "t-intentmeasure": "<Unavailable>",
-  "t-countermeasure": "<Unavailable>"
+  "layout": "tactic"
 }

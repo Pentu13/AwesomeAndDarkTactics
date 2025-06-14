@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Consider Energy-Aware Pruning",
   "tags": [
     "machine-learning",
@@ -17,12 +16,13 @@
   "t-context": "Machine Learning",
   "t-feature": "<Unavailable>",
   "t-intent": "Improve energy efficiency by pruning nodes with the smallest joint impact on the output",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Tien-Ju Yang, Yu-Hsin Chen, and Vivienne Sze. 2017. Designing Energy-Efficient Convolutional Neural Networks Using Energy-Aware Pruning. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) (pp. 5687-5695).",
+  "t-source-doi": "https://doi.org/doi.org/10.48550/arXiv.1611.05128",
   "t-targetQA": "Energy Efficiency",
   "t-relatedQA": "Accuracy",
   "t-measuredimpact": "The energy-aware pruning method reduces energy consumption",
-  "t-source": "Tien-Ju Yang, Yu-Hsin Chen, and Vivienne Sze. 2017. Designing Energy-Efficient Convolutional Neural Networks Using Energy-Aware Pruning. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) (pp. 5687-5695).",
-  "t-source-doi": "https://doi.org/doi.org/10.48550/arXiv.1611.05128",
   "t-diagram": "consider-energy-aware-pruning.png",
-  "t-intentmeasure": "<Unavailable>",
-  "t-countermeasure": "<Unavailable>"
+  "layout": "tactic"
 }

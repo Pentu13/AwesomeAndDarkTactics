@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Choose fitting deployment paradigm",
   "tags": [
     "cloud-principles",
@@ -16,12 +15,13 @@
   "t-context": "VM versus serverless",
   "t-feature": "Deployment paradigm",
   "t-intent": "Selecting the best-fitting deployment paradigm to optimize performance and cost",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Master Thesis “Architectural Tactics to Optimize Software for Energy Efficiency in the Public Cloud” by Sophie Vos",
+  "t-source-doi": "NA",
   "t-targetQA": "Performance",
   "t-relatedQA": "Cost-efficiency, energy-efficiency",
   "t-measuredimpact": "When organizations decide to migrate their software to the public cloud, cloud consumers need to decide upfront which deployment paradigm to embed as it is costly and time-consuming to change the deployment paradigm after launching the application. Hence, with this analysis, we aim to support cloud consumers in choosing the fitting deployment paradigm. We designed an experiment to measure the impact of the deployment paradigm on the energy consumption. Due to time constraints, the experiment could not be executed successfully. We refer the reader to section 7.2.3 and 7.2.4 of the source for further reading.",
-  "t-source": "Master Thesis “Architectural Tactics to Optimize Software for Energy Efficiency in the Public Cloud” by Sophie Vos",
-  "t-source-doi": "NA",
   "t-diagram": "model-choose_fitting_deployment_paradigm.png",
-  "t-intentmeasure": "<Unavailable>",
-  "t-countermeasure": "<Unavailable>"
+  "layout": "tactic"
 }

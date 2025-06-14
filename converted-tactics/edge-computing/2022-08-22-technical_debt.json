@@ -1,5 +1,4 @@
 {
-  "layout": "tactic",
   "title": "Technical debt",
   "tags": [],
   "t-sort": "Dark Tactic",
@@ -17,8 +16,9 @@
   "t-countermeasure": "Spread studies to increase awareness about the drawbacks of technical debt, the provider providing training in the new technology so that the users completely adopt it, and not seemingly adopt it.",
   "t-source": "*The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon, Muriel Garcia and Patricia Lago",
   "t-source-doi": "https://doi.org/10.21428/bf6fb269.9422c084",
-  "t-diagram": "models-technical_debt.png",
   "t-targetQA": "<Unavailable>",
   "t-relatedQA": "<Unavailable>",
-  "t-measuredimpact": "<Unavailable>"
+  "t-measuredimpact": "<Unavailable>",
+  "t-diagram": "models-technical_debt.png",
+  "layout": "tactic"
 }

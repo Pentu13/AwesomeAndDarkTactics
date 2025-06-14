@@ -1,6 +1,5 @@
 {
-  "layout": "tactic",
-  "title": "Use Built-In Library Functions ",
+  "title": "Use Built-In Library Functions",
   "tags": [
     "machine-learning",
     "algorithm-design",
@@ -17,12 +16,13 @@
   "t-context": "Machine Learning",
   "t-feature": "<Unavailable>",
   "t-intent": "Improve energy efficiency by using built-in libraries, if possible",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Shriram Shanbhag, Sridhar Chimalakonda, Vibhu Saujanya Sharma, and Vikrant Kaulgud. 2022. Towards a Catalog of Energy Patterns in Deep Learning Development. In Proceedings of the International Conference on Evaluation and Assessment in Software Engineering 2022. 150–159",
+  "t-source-doi": "https://doi.org/10.1145/3530019.3530035",
   "t-targetQA": "Performance",
   "t-relatedQA": "Energy Efficiency",
   "t-measuredimpact": "<Unavailable>",
-  "t-source": "Shriram Shanbhag, Sridhar Chimalakonda, Vibhu Saujanya Sharma, and Vikrant Kaulgud. 2022. Towards a Catalog of Energy Patterns in Deep Learning Development. In Proceedings of the International Conference on Evaluation and Assessment in Software Engineering 2022. 150–159",
-  "t-source-doi": "https://doi.org/10.1145/3530019.3530035",
   "t-diagram": "use-built-in-library-functions.png",
-  "t-intentmeasure": "<Unavailable>",
-  "t-countermeasure": "<Unavailable>"
+  "layout": "tactic"
 }
