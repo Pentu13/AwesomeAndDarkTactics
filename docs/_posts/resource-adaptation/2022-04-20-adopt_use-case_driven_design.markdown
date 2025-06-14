@@ -5,8 +5,14 @@ tags:
   - design
 t-sort: Awesome Tactic
 t-type: Architectural Tactic
-categories: resource-adaptation
-t-description: 'From the interviews, we learned that often not all used ICT services create direct business value. Use-case driven design is an approach to detect redundant software and data storage. This entails that services that are not used should be turned off or eliminated. By eliminating redundant software and data storage, costs and energy can be saved.'
+categories:
+  - resource-adaptation
+t-description: >-
+  From the interviews, we learned that often not all used ICT services create
+  direct business value. Use-case driven design is an approach to detect
+  redundant software and data storage. This entails that services that are not
+  used should be turned off or eliminated. By eliminating redundant software and
+  data storage, costs and energy can be saved.
 t-participant: Cloud consumers
 t-artifact: Cloud workloads
 t-context: Public cloud
@@ -15,9 +21,12 @@ t-intent: Eliminating overhead from unused services
 t-targetQA: Cost-efficiency
 t-relatedQA: Energy-efficiency
 t-measuredimpact: <Unavailable>
-t-source: Master Thesis “Architectural Tactics to Optimize Software for Energy Efficiency in the Public Cloud” by Sophie Vos
+t-source: >-
+  Master Thesis “Architectural Tactics to Optimize Software for Energy
+  Efficiency in the Public Cloud” by Sophie Vos
 t-source-doi: NA
 t-intentmeasure: <Unavailable>
 t-countermeasure: <Unavailable>
 t-diagram: <Unavailable>
 ---
+

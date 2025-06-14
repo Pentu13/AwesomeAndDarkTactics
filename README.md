@@ -34,8 +34,7 @@ Please review and fix any errors before requesting review.
 
 **If the tactic uses a category or tags that were not previously used in the archive, additional files need to be added.**
 
-## Manually generating category or tags files
-
+## Manually generating category
 ### Category
 
 1. Duplicate an existing file from the `docs/categories` folder. Rename the file according to the new category (keep the extension `.md`), and fill in the following fields inside the markdown file:
@@ -47,6 +46,10 @@ Please review and fix any errors before requesting review.
 1. The category should be shown on the *Catalog* page of the archive.
 
 ### Tags
+
+1. Tags are now automatically added onto the archive. You need to submit a tactic with unique tags in the markdown template to see the new tags. 
+
+1. OR
 
 1. Duplicate an existing tag file from the `docs/tags` folder. Rename the file according to the new tag, and fill in the following field inside the markdown file:
     * `tag-name`
