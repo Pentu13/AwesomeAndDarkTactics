@@ -3,6 +3,9 @@ layout: tactic
 title: Consider Transfer Learning
 t-sort: Awesome Tactic
 t-type: Architectural Tactic
+tags: 
+  - machine-learning
+  - model-optimization
 categories:
   - green-ml-enabled-systems
 t-description: Transfer learning means using knowledge gained from one task (a pre-trained model) and applying it to another similar task. This is feasible only if there is an existing pre-trained model available for use. The absence of or reduction in the model training effort in case of fine-tuning results in savings in energy consumption.
