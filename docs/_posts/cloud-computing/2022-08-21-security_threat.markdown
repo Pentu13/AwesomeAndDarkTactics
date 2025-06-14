@@ -28,6 +28,6 @@ t-source-doi: 'https://doi.org/10.21428/bf6fb269.9422c084'
 t-diagram: models-security_threat.png
 t-targetQA: <Unavailable>
 t-relatedQA: <Unavailable>
-t-measuredimpact: TESTVALUEEEEEEEEEE
+t-measuredimpact: <Unavailable>
 ---
 
