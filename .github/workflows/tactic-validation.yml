@@ -26,3 +26,10 @@ jobs:
         run: node validator_new_posts.js
       - name: generate new tags
         run: node new_tag_generator.js
+      - name: Commit and push new tag files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/tags/
+          git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
+          git push
