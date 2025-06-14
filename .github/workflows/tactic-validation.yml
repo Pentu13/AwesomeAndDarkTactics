@@ -24,3 +24,5 @@ jobs:
         run: npm install
       - name: Run validation script
         run: node validator_new_posts.js
+      - name: generate new tags
+        run: node new_tag_generation.js
