@@ -47,9 +47,9 @@ Please review and fix any errors before requesting review.
 
 ### Tags
 
-1. Tags are now automatically added onto the archive. You need to submit a tactic with unique tags in the markdown template to see the new tags. 
+Tags are now automatically added onto the archive. You need to submit a tactic with unique tags in the markdown template to see the new tags. 
 
-1. OR
+OR
 
 1. Duplicate an existing tag file from the `docs/tags` folder. Rename the file according to the new tag, and fill in the following field inside the markdown file:
     * `tag-name`
