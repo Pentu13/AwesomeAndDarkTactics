@@ -32,7 +32,7 @@ Please review and fix any errors before requesting review.
 
 
 
-**If the tactic uses a category or tags that were not previously used in the archive, additional files need to be added.**
+**If the tactic uses a category that was not previously used in the archive, additional files need to be added.**
 
 ## Manually generating category
 ### Category
