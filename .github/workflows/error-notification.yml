@@ -1,5 +1,9 @@
 name: Error notification
 
+permissions: 
+    contents: write
+    issues: write 
+    
 on:
   workflow_call:
     inputs:
