@@ -11,7 +11,6 @@ on:
 permissions:
   contents: write
   
-
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -26,12 +25,6 @@ jobs:
       - name: Run validation script
         id: validation_step
         run: node validator_new_posts.js
-      - name: notify user on error
-        if: failure()
-        uses: ./.github/workflows/error-notification.yml
-        with:
-          workflow_name: ${{ github.workflow }}
-          error_message: "Tactic validation failed. See the logs for additional information"
       - name: generate new tags
         run: node new_tag_generator.js
       - name: Commit and push new tag files
@@ -41,3 +34,11 @@ jobs:
           git add docs/tags/
           git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
           git push
+
+  notify_on_error:
+    needs: validate
+    if: failure()
+    uses: ./.github/workflows/error-notification.yml
+    with:
+      workflow_name: ${{ github.workflow }}
+      error_messages: "Tactic validation failed. See the logs for additional information."
