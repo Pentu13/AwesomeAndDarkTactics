@@ -1,0 +1,26 @@
+name: Error notification
+
+on:
+  workflow_call:
+    inputs:
+      workflow_name:
+        required: true
+        type: string
+      error_messages:
+        required: true
+        type: string
+
+jobs:
+  notify_error:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Validation Failed: ${{ inputs.workflow_name }}",
+              body: "Error in workflow: ${{ inputs.workflow_name }}\n\nCommit: ${{ github.sha }}\nBranch: ${{ github.ref }}\nAuthor: ${{ github.actor }}\n\nError: ${{ inputs.error_messages }}"
+            })
