@@ -17,6 +17,34 @@ const existingCategories = fs.readdirSync(categoriesDir)
   .filter(f => f.endsWith('.md'))
   .map(f => f.replace(/\.md$/, ''));
 
+// List of required fields (from your schema or business logic)
+const requiredFields = [
+  'title',
+  't-sort',
+  't-type',
+  'categories',
+  't-description',
+  't-participant',
+  't-artifact',
+  't-context',
+  't-feature',
+  't-intent',
+  't-intentmeasure',
+  't-countermeasure',
+  't-source',
+  't-source-doi',
+  't-diagram'
+];
+
+function isEmpty(val) {
+  return (
+    val === undefined ||
+    val === null ||
+    (typeof val === 'string' && (val.trim() === '' || val.trim() === '<Unavailable>')) ||
+    (Array.isArray(val) && val.length === 0)
+  );
+}
+
 function processDir(dir) {
     const files = fs.readdirSync(dir);
     files.forEach(file => {
@@ -26,18 +54,16 @@ function processDir(dir) {
             processDir(fullPath);
         } else if (file.endsWith('.md') || file.endsWith('.markdown')) {
             const content = fs.readFileSync(fullPath, 'utf8');
-            const { data } = matter(content);
+            const parsed = matter(content);
+            const data = parsed.data;
+            const body = parsed.content.trim();
 
-            // DO NOT normalize types before validation!
-            // Only do minimal pre-processing if absolutely necessary (e.g., YAML quirks)
-            // For tags, if you want to allow both array and space-separated string in YAML:
-            if (Array.isArray(data.tags)) {
-                // ok
-            } else if (typeof data.tags === 'string') {
-                data.tags = data.tags.split(' ').filter(Boolean);
-            } else {
-                data.tags = [];
-            }
+            // Check for required fields and non-empty values
+            requiredFields.forEach(field => {
+                if (!(field in data) || isEmpty(data[field])) {
+                    errors.push(`Missing or empty required field "${field}" in ${file}`);
+                }
+            });
 
             // CATEGORY EXISTENCE CHECK
             if (data.categories) {
@@ -59,7 +85,12 @@ function processDir(dir) {
             // Validate the raw data as parsed from YAML
             const valid = validate(data);
             if (!valid) {
-                errors.push(`Validation failed in ${file}: ${JSON.stringify(validate.errors)}`);
+                errors.push(`Schema validation failed in ${file}: ${JSON.stringify(validate.errors)}`);
+            }
+
+            // Check for non-empty content after front matter
+            if (!body || body.length === 0) {
+                errors.push(`No content found after front matter in ${file}`);
             }
         }
     });
