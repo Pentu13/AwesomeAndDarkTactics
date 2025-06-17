@@ -25,6 +25,6 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: "Validation Failed: ${{ inputs.workflow_name }}",
-              body: "Error in workflow: ${{ inputs.workflow_name }}\n\nCommit: ${{ github.sha }}\nBranch: ${{ github.ref }}\nAuthor: ${{ github.actor }}\n\nError: ${{ inputs.error_messages }}"
+              title: `Validation Failed: ${{ inputs.workflow_name }}`,
+              body: `Error in workflow: ${{ inputs.workflow_name }}\n\nCommit: ${{ github.sha }}\nBranch: ${{ github.ref }}\nAuthor: ${{ github.actor }}\n\nError: ${{ inputs.error_messages }}\n\n[View workflow run](${github.server_url}/${github.repository}/actions/runs/${github.run_id})\n\nPlease review the errors above, fix your submission, and push your changes to re-run validation.`
             })
