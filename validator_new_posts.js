@@ -96,6 +96,12 @@ function processDir(dir) {
     });
 }
 
+// Add this inside your file loop, after defining 'file'
+const validNamePattern = /^\d{4}-\d{2}-\d{2}-.+\.(md|markdown)$/;
+if (!validNamePattern.test(file)) {
+  errors.push(`File "${file}" does not follow the naming convention 'YYYY-MM-DD-title.md' as described in the README.`);
+}
+
 processDir(inputDir);
 
 if (errors.length) {
