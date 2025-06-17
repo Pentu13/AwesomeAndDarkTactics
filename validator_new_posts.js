@@ -17,23 +17,15 @@ const existingCategories = fs.readdirSync(categoriesDir)
   .filter(f => f.endsWith('.md'))
   .map(f => f.replace(/\.md$/, ''));
 
-// List of required fields (from your schema or business logic)
-const requiredFields = [
-  'title',
-  't-sort',
-  't-type',
-  'categories',
-  't-description',
-  't-participant',
-  't-artifact',
-  't-context',
-  't-feature',
-  't-intent',
-  't-intentmeasure',
-  't-countermeasure',
-  't-source',
-  't-source-doi',
-  't-diagram'
+// List of required fields for each tactic type
+const requiredFieldsAwesome = [
+  'title', 't-sort', 't-type', 'categories', 't-description',
+  't-participant', 't-artifact', 't-context', 't-feature', 't-intent', 't-source'
+];
+
+const requiredFieldsDark = [
+  'title', 't-sort', 't-type', 'categories', 't-description',
+  't-participant', 't-artifact', 't-context', 't-feature', 't-intent', 't-source'
 ];
 
 function isEmpty(val) {
@@ -58,7 +50,15 @@ function processDir(dir) {
             const data = parsed.data;
             const body = parsed.content.trim();
 
-            // Check for required fields and non-empty values
+            // Naming convention check
+            const validNamePattern = /^\d{4}-\d{2}-\d{2}-.+\.(md|markdown)$/;
+            if (!validNamePattern.test(file)) {
+              errors.push(`File "${file}" does not follow the naming convention 'YYYY-MM-DD-title.md' as described in the README.`);
+            }
+
+            // Choose required fields based on t-sort
+            const tSort = (data['t-sort'] || '').toLowerCase();
+            const requiredFields = tSort.includes('awesome') ? requiredFieldsAwesome : requiredFieldsDark;
             requiredFields.forEach(field => {
                 if (!(field in data) || isEmpty(data[field])) {
                     errors.push(`Missing or empty required field "${field}" in ${file}`);
@@ -94,12 +94,6 @@ function processDir(dir) {
             }
         }
     });
-}
-
-// Add this inside your file loop, after defining 'file'
-const validNamePattern = /^\d{4}-\d{2}-\d{2}-.+\.(md|markdown)$/;
-if (!validNamePattern.test(file)) {
-  errors.push(`File "${file}" does not follow the naming convention 'YYYY-MM-DD-title.md' as described in the README.`);
 }
 
 processDir(inputDir);
