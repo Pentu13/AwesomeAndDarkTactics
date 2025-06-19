@@ -1,0 +1,27 @@
+{
+  "layout": "tactic",
+  "title": "Awesome Tactic Template",
+  "tags": [
+    "template",
+    "awesome-tactic"
+  ],
+  "t-sort": "Awesome Tactic",
+  "t-type": "Template",
+  "categories": [
+    "templates"
+  ],
+  "t-description": "This is a template for creating Awesome Tactics. Replace this description with what your tactic does.",
+  "t-participant": "Template User",
+  "t-artifact": "Template Artifact",
+  "t-context": "Template Context",
+  "t-feature": "Template Feature",
+  "t-intent": "Template Intent",
+  "t-targetQA": "<Unavailable>",
+  "t-relatedQA": "<Unavailable>",
+  "t-measuredimpact": "<Unavailable>",
+  "t-source": "Template Source",
+  "t-source-doi": "<Unavailable>",
+  "t-diagram": "<Unavailable>",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>"
+}
