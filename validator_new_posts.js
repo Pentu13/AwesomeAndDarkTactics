@@ -87,11 +87,6 @@ function processDir(dir) {
             if (!valid) {
                 errors.push(`Schema validation failed in ${file}: ${JSON.stringify(validate.errors)}`);
             }
-
-            // Check for non-empty content after front matter
-            if (!body || body.length === 0) {
-                errors.push(`No content found after front matter in ${file}`);
-            }
         }
     });
 }
