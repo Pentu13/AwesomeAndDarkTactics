@@ -21,9 +21,6 @@ To contribute the **model/diagram for an existing tactic**, please follow the st
 
 To contribute a **new Awesome or Dark Tactic** to the archive, please follow the steps below for submitting to the archive contact.
 
-1. **View the templates** on our website to understand the format:
-    * [Awesome Tactic Template](/templates/2022/01/01/awesome_template.html)
-    * [Dark Tactic Template](/templates/2022/01/01/dark_template.html)
 1. **Download the template** (see below) for the type of tactic you want to create.
 1. Fill in the fields inside the `.md` file with the values for your tactic.
     * Make sure to put quotation marks around the values for correct processing of the file on our end.
