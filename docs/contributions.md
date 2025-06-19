@@ -21,7 +21,10 @@ To contribute the **model/diagram for an existing tactic**, please follow the st
 
 To contribute a **new Awesome or Dark Tactic** to the archive, please follow the steps below for submitting to the archive contact.
 
-1. Download the template (see below) for the type of tactic you want to create.
+1. **View the templates** on our website to understand the format:
+    * [Awesome Tactic Template](/templates/2022/01/01/awesome_template.html)
+    * [Dark Tactic Template](/templates/2022/01/01/dark_template.html)
+1. **Download the template** (see below) for the type of tactic you want to create.
 1. Fill in the fields inside the `.md` file with the values for your tactic.
     * Make sure to put quotation marks around the values for correct processing of the file on our end.
     * You are allowed to leave values empty, if the value is unknown or unsure at this time. When leaving a value empty, please do not use quotation marks on that line.
@@ -32,7 +35,10 @@ To contribute a **new Awesome or Dark Tactic** to the archive, please follow the
 
 ### Template download
 
+#### Complete Template Packages (ZIP files)
 * [Awesome Tactic template (.zip)]({{ "assets/templates/awesome-tactic-template.zip" | relative_url }})
 * [Dark Tactic template (.zip)]({{ "assets/templates/dark-tactic-template.zip" | relative_url }})
+
+#### Diagram Templates
 * [Awesome Tactic model template (.xml for diagrams.net)]({{ "assets/templates/awesome-tactic-diagram.xml" | relative_url }})
 * [Dark Tactic model template (.xml for diagrams.net)]({{ "assets/templates/dark-tactic-diagram.xml" | relative_url }})
