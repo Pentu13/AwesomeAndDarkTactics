@@ -1,0 +1,27 @@
+{
+  "layout": "tactic",
+  "title": "Dark Tactic Template",
+  "tags": [
+    "template",
+    "dark-tactic"
+  ],
+  "t-sort": "Dark Tactic",
+  "t-type": "Template",
+  "categories": [
+    "templates"
+  ],
+  "t-description": "This is a template for creating Dark Tactics. Replace this description with what your tactic does.",
+  "t-participant": "Template User",
+  "t-artifact": "Template Artifact",
+  "t-context": "Template Context",
+  "t-feature": "Template Feature",
+  "t-intent": "Template Intent",
+  "t-intentmeasure": "<Unavailable>",
+  "t-countermeasure": "<Unavailable>",
+  "t-source": "Template Source",
+  "t-source-doi": "<Unavailable>",
+  "t-diagram": "<Unavailable>",
+  "t-targetQA": "<Unavailable>",
+  "t-relatedQA": "<Unavailable>",
+  "t-measuredimpact": "<Unavailable>"
+}
