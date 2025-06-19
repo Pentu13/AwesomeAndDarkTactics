@@ -26,10 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # First validate any new posts
-      - name: Validate new posts
-        run: node validator_new_posts.js
-        continue-on-error: true  # Don't fail if there are no new posts
+      # Validate existing posts for any changes
+      - name: Validate posts
+        run: node validator.js docs/_posts
 
       # Fix markdown schema
       - name: Fix markdown schema
