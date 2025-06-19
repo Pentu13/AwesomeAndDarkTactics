@@ -3,7 +3,6 @@ layout: tactic
 title: "Dark Tactic Template"                # [REQUIRED] Short, descriptive name for the tactic
 tags: 
   - template
-  - dark-tactic
 t-sort: "Dark Tactic"    # [REQUIRED] Should be "Dark Tactic"
 t-type: "Template"       # [REQUIRED] E.g., Unsustainable Pattern, Anti-pattern
 categories: 

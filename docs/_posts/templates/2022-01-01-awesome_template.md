@@ -3,7 +3,6 @@ layout: tactic
 title: "Awesome Tactic Template"                # [REQUIRED] Short, descriptive name for the tactic
 tags: 
   - template
-  - awesome-tactic
 t-sort: "Awesome Tactic" # [REQUIRED] Should be "Awesome Tactic"
 t-type: "Template"       # [REQUIRED] E.g., Architectural Tactic, Software Practice
 categories: 
