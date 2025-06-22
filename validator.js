@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import matter from 'gray-matter';
 import Ajv from 'ajv';
 import path from 'path';
-import schema from './tactic.field.json' assert { type: 'json' };
+import schema from './tactic.field.json' with { type: 'json' };
 
 const ajv = new Ajv({ useDefaults: true });
 const validate = ajv.compile(schema);

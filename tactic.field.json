@@ -4,6 +4,9 @@
     "description": "Schema for the tactic field in search index",
     "type": "object",
     "properties": {
+        "layout": {
+            "type": "string"
+        },
         "title": {
             "type": "string",
             "description": "Insert Tactic NAME",
