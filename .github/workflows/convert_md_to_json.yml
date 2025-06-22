@@ -2,7 +2,9 @@ name: Convert Markdown to JSON
 
 on:
   workflow_run:
-    workflows: ["Move Validated Posts"]
+    workflows:
+      - "Move Validated Posts"
+      - "Post Update Handler"
     types:
       - completed
 
@@ -10,12 +12,30 @@ permissions:
   contents: write
 
 jobs:
+  check_for_moved_posts:
+    runs-on: ubuntu-latest
+    outputs:
+      posts_moved: ${{ steps.check_files.outputs.any_changed }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - name: Check for changed files in _posts
+        id: check_files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: docs/_posts/**
+
   convert:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    needs: check_for_moved_posts
+    if: ${{ github.event.workflow_run.conclusion == 'success' && needs.check_for_moved_posts.outputs.posts_moved == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
