@@ -1,4 +1,5 @@
 // Minor change to trigger workflow
+// Adding another line to test the workflow trigger.
 
 import fs from 'fs-extra';
 import matter from 'gray-matter';
