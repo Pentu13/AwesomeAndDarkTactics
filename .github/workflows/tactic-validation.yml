@@ -23,6 +23,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write
   
 jobs:
   check_for_post_changes:
@@ -70,6 +71,16 @@ jobs:
           git add docs/tags/
           git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
           git push
+
+  cancel-if-skipped:
+    runs-on: ubuntu-latest
+    needs: validate
+    if: always() && needs.validate.result == 'skipped'
+    steps:
+      - name: Cancel workflow run
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh run cancel ${{ github.run_id }}
 
   notify_on_error:
     needs: validate
