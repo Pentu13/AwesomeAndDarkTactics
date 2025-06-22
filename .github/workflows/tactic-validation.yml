@@ -23,9 +23,26 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write
   
 jobs:
+  check_for_post_changes:
+    runs-on: ubuntu-latest
+    outputs:
+      posts_changed: ${{ steps.changed-files.outputs.any_changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for changed posts
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            docs/_posts/**
+            docs/_new_posts/**
+
   validate:
+    needs: check_for_post_changes
+    if: needs.check_for_post_changes.outputs.posts_changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -55,8 +72,45 @@ jobs:
           git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
           git push
 
-  notify_on_error:
+  move-posts:
     needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Move validated tactics to category subfolders
+        run: |
+          mkdir -p docs/_posts
+          shopt -s nullglob
+          for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
+            [ -e "$file" ] || continue
+            category=$(awk '
+              /^categories:/ {in_categories=1; next}
+              in_categories && /^ *- / {
+                sub(/^ *- /, "", $0); print $0; exit
+              }
+              in_categories && NF && !/^ / {in_categories=0}
+            ' "$file" | xargs)
+            if [ -z "$category" ]; then
+              echo "No category found in $file, skipping."
+              continue
+            fi
+            mkdir -p "docs/_posts/$category"
+            mv "$file" "docs/_posts/$category/"
+            echo "Moved $file to docs/_posts/$category/"
+          done
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/_posts
+          git rm -r docs/_new_posts || true
+          git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
+          git push
+
+  notify_on_error:
+    needs: [validate, move-posts]
     if: failure()
     uses: ./.github/workflows/error-notification.yml
     with:

@@ -13,15 +13,14 @@ jobs:
   check_for_new_posts:
     runs-on: ubuntu-latest
     outputs:
-      new_posts_exist: ${{ steps.changed-files.outputs.any_changed }}
+      new_posts_exist: ${{ steps.check_files.outputs.any_changed }}
     steps:
-      - name: Checkout triggering commit
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-
-      - name: Check for new posts in the commit
-        id: changed-files
+      - name: Check for new posts
+        id: check_files
         uses: tj-actions/changed-files@v44
         with:
           files: docs/_new_posts/**
@@ -31,7 +30,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' && needs.check_for_new_posts.outputs.new_posts_exist == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout triggering commit
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
