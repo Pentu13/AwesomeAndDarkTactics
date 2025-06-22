@@ -1,9 +1,9 @@
-const fs = require('fs-extra');
-const matter = require('gray-matter');
-const Ajv = require('ajv');
-const path = require('path');
+import fs from 'fs-extra';
+import matter from 'gray-matter';
+import Ajv from 'ajv';
+import path from 'path';
+import schema from './tactic.field.json' with { type: 'json' };
 
-const schema = require('./tactic.field.json');
 const ajv = new Ajv({ useDefaults: true });
 const validate = ajv.compile(schema);
 

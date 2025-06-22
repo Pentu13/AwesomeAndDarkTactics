@@ -36,11 +36,21 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run validation script
-        id: validation_step
         run: node validator.js
-      - name: generate new tags
+
+      - name: Check for new posts
+        id: new_posts_check
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            docs/_new_posts/**
+
+      - name: Generate new tags
+        if: steps.new_posts_check.outputs.any_changed == 'true'
         run: node new_tag_generator.js
+
       - name: Commit and push new tag files
+        if: steps.new_posts_check.outputs.any_changed == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
