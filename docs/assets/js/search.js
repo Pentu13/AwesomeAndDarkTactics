@@ -1,3 +1,5 @@
+import { performSearch as searchLogic } from './search-logic.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
@@ -63,30 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('input', performSearch);
 
     function performSearch() {
-        const query = searchInput.value.toLowerCase();
-        if (query.length < 2 && selectedTags.size === 0) {
-            searchResults.innerHTML = '';
-            searchResults.style.display = 'none';
-            return;
-        }
+        const query = searchInput.value;
+        
+        const results = searchLogic(query, selectedTags, searchIndex);
 
         console.log('Searching for:', query);
         console.log('Selected tags:', Array.from(selectedTags));
-
-        const results = searchIndex.filter(item => {
-            // Text search
-            const titleMatch = item.title && item.title.toLowerCase().includes(query);
-            const contentMatch = item.content && item.content.toLowerCase().includes(query);
-            const tagsMatch = item.tags && item.tags.some(tag => tag && tag.toLowerCase().includes(query));
-            const textMatch = titleMatch || contentMatch || tagsMatch;
-
-            // Tag filter
-            const tagFilterMatch = selectedTags.size === 0 || 
-                (item.tags && Array.from(selectedTags).every(tag => item.tags.includes(tag)));
-
-            return textMatch && tagFilterMatch;
-        });
-
         console.log('Search results:', results);
         displayResults(results);
     }
@@ -95,7 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
         searchResults.innerHTML = '';
         
         if (results.length === 0) {
-            searchResults.innerHTML = '<div class="no-results">No results found</div>';
+            if ((searchInput.value.length >= 2 || selectedTags.size > 0)) {
+                searchResults.innerHTML = '<div class="no-results">No results found</div>';
+            } else {
+                searchResults.style.display = 'none';
+                return;
+            }
         } else {
             // Group results by type
             const groupedResults = {

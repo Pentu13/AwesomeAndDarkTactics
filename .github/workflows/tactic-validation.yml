@@ -4,9 +4,21 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/_posts/**'
+      - 'docs/_new_posts/**'
+      - 'validator.js'
+      - 'tactic.field.json'
+      - '.github/workflows/tactic-validation.yml'
   pull_request:
     branches:
       - main
+    paths:
+      - 'docs/_posts/**'
+      - 'docs/_new_posts/**'
+      - 'validator.js'
+      - 'tactic.field.json'
+      - '.github/workflows/tactic-validation.yml'
 
 permissions:
   contents: write
