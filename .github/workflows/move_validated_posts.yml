@@ -10,12 +10,32 @@ permissions:
   contents: write
 
 jobs:
+  check_for_new_posts:
+    runs-on: ubuntu-latest
+    outputs:
+      new_posts_exist: ${{ steps.changed-files.outputs.any_changed }}
+    steps:
+      - name: Checkout triggering commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Check for new posts in the commit
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: docs/_new_posts/**
+
   move-tactics:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    needs: check_for_new_posts
+    if: ${{ github.event.workflow_run.conclusion == 'success' && needs.check_for_new_posts.outputs.new_posts_exist == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout triggering commit
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
       - name: Move validated tactics to category subfolders
         run: |
           mkdir -p docs/_posts
