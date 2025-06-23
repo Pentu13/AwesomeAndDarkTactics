@@ -31,7 +31,10 @@ export function isEmpty(val) {
 }
 
 export function isEmptyStrict(val) {
-  return val === undefined || val === null || (typeof val === 'string' && (val.trim() === '' || val.trim() === '<Unavailable>')) || (Array.isArray(val) && val.length === 0);
+  if (Array.isArray(val)) {
+    return val.length === 0;
+  }
+  return val === undefined || val === null || (typeof val === 'string' && (val.trim() === '' || val.trim() === '<Unavailable>'));
 }
 
 export function validateFile(fullPath, existingCategories, errors = []) {

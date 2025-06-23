@@ -28,8 +28,11 @@
     "strip-bom-string": "^1.0.0",
     "universalify": "^2.0.1"
   },
+  "devDependencies": {
+    "vitest": "^0.34.6"
+  },
   "scripts": {
-    "test": "mocha",
+    "test": "vitest run",
     "validate": "node validator.js"
   },
   "repository": {
