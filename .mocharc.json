@@ -1,4 +1,0 @@
-{
-  "spec": "test/**/*.js",
-  "experimental-json-modules": true
-} 
