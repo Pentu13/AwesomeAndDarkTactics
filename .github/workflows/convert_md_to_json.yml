@@ -29,6 +29,11 @@ jobs:
         run: |
           echo "Running node convert.js on all posts..."
           node convert.js
+      - name: Checkout main branch
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
       - name: Commit and push converted JSON
         run: |
           git config --global user.name "github-actions[bot]"
