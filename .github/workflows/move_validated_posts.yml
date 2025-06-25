@@ -41,7 +41,7 @@ jobs:
           git reset --hard origin/main
       - name: Move validated tactics to category subfolders
         run: |
-          mkdir -p docs/_posts
+          moved_any=false
           shopt -s nullglob
           for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
             [ -e "$file" ] || continue
@@ -53,18 +53,20 @@ jobs:
               in_categories && NF && !/^ / {in_categories=0}
             ' "$file" | xargs)
             if [ -z "$category" ]; then
-              echo "No category found in $file, skipping."
+              echo "No category found in $file, skipping and NOT deleting."
               continue
             fi
             mkdir -p "docs/_posts/$category"
             mv "$file" "docs/_posts/$category/"
             echo "Moved $file to docs/_posts/$category/"
+            moved_any=true
           done
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/_posts
-          git rm -r docs/_new_posts || true
-          git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
-          git push
+          if $moved_any; then
+            git add docs/_posts
+            git rm -r docs/_new_posts || true
+            git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
+            git push
+          else
+            echo "No files were moved. Not deleting docs/_new_posts."
+            exit 1
+          fi
