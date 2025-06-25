@@ -72,33 +72,6 @@ jobs:
           git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
           git push
 
-  move-posts:
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Move validated tactics to category subfolders
-        run: |
-          mkdir -p docs/_posts
-          shopt -s nullglob
-          for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
-            [ -e "$file" ] || continue
-            category=$(awk '
-              /^categories:/ {in_categories=1; next}
-              in_categories && /^ *- / {
-                sub(/^ *- /, "", $0); print $0; exit
-              }
-              in_categories && NF && !/^ / {in_categories=0}
-            ' "$file" | xargs)
-            if [ -z "$category" ]; then
-              echo "No category found in $file, skipping."
-              continue
-            fi
-            mkdir -p "docs/_posts/$category"
-            mv "$file" "docs/_posts/$category/"
-            echo "Moved $file to docs/_posts/$category/"
-          done
           
       - name: Commit and push changes
         run: |
@@ -110,7 +83,7 @@ jobs:
           git push
 
   notify_on_error:
-    needs: [validate, move-posts]
+    needs: [validate]
     if: failure()
     uses: ./.github/workflows/error-notification.yml
     with:
