@@ -11,7 +11,7 @@ t-description: >-
   and he risks being compromised would the cloud provider not provide services
   with high enough quality. For example, if the customer support does not handle
   issues in a good way (e.g., by taking a long time to solve issues) and the
-  cloud user is completely dependent on the customer support to solve any
+  cloud user is completccely dependent on the customer support to solve any
   problem, then this creates unsustainability. Relying heavily on cloud
   providers and therefore lacking planning and preparation to deal with
   unexpected issues with the cloud service has been identified as one of the
