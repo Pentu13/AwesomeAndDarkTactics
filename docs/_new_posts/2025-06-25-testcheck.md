@@ -14,7 +14,7 @@ t-description: >-
   cloud user is completccely dependent on the customer support to solve any
   problem, then this creates unsustainability. Relying heavily on cloud
   providers and therefore lacking planning and preparation to deal with
-  unexpected issues with the cloud service has been identified as one of the
+  unexpected issues with thdddde cloud service has been identified as one of the
   major risks when adopticceceing cloud computing.
 t-participant: 'cloud-user, cloud-provider'
 t-artifact: Cloud infrastructure and associated services
