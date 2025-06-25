@@ -34,7 +34,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-
+      - name: Checkout main branch
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
       - name: Move validated tactics to category subfolders
         run: |
           mkdir -p docs/_posts
