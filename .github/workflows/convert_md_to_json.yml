@@ -21,11 +21,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
       - name: Check for changed files in _posts
         id: check_files
         uses: tj-actions/changed-files@v44
         with:
           files: docs/_posts/**
+      - name: Debug changed files
+        run: echo "${{ steps.check_files.outputs.all_changed_files }}"
 
   convert:
     needs: check_for_moved_posts
