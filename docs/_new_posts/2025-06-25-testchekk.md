@@ -15,7 +15,7 @@ t-description: >-
   problem, then this creates unsustainability. Relying heavily on cloud
   providers and therefore lacking planning and preparation to deal with
   unexpected issues with the cloud service has been identified as one of the
-  major risks when adopting cloud computing.
+  major risks when adopticceceing cloud computing.
 t-participant: 'cloud-user, cloud-provider'
 t-artifact: Cloud infrastructure and associated services
 t-context: Normal operation
