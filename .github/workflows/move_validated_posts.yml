@@ -41,10 +41,13 @@ jobs:
           git reset --hard origin/main
       - name: Move validated tactics to category subfolders
         run: |
+          echo "Listing files in docs/_new_posts before move:"
+          ls -l docs/_new_posts || echo "No files found."
           moved_any=false
           shopt -s nullglob
           for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
             [ -e "$file" ] || continue
+            echo "Processing $file..."
             category=$(awk '
               /^categories:/ {in_categories=1; next}
               in_categories && /^ *- / {
@@ -61,6 +64,8 @@ jobs:
             echo "Moved $file to docs/_posts/$category/"
             moved_any=true
           done
+          echo "Listing files in docs/_new_posts after move:"
+          ls -l docs/_new_posts || echo "No files left."
           if $moved_any; then
             git add docs/_posts
             git rm -r docs/_new_posts || true

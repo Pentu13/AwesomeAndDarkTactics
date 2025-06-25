@@ -27,8 +27,6 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: docs/_posts/**
-      - name: Debug changed files
-        run: echo "${{ steps.check_files.outputs.all_changed_files }}"
 
   convert:
     needs: check_for_moved_posts
@@ -46,7 +44,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Convert Markdown to JSON
-        run: node convert.js
+        run: |
+          echo "Running node convert.js on changed files..."
+          node convert.js
       - name: Commit and push converted JSON
         run: |
           git config --global user.name "github-actions[bot]"
