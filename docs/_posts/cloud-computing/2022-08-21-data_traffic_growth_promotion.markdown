@@ -2,7 +2,7 @@
 layout: tactic
 title: Data traffic growth promotion
 tags: 
-  - testttaggggg
+  - testtt
 t-sort: Dark Tactic
 t-type: Unsustainable Pattern
 categories:
