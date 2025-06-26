@@ -27,7 +27,7 @@ function fixDataToSchema(data, schema) {
         fixed.categories = [];
     }
 
-    // Fill in missing fields with schema defaults
+    // Fill in missing fields with schema defaults (but don't overwrite empty arrays)
     for (const [key, prop] of Object.entries(schema.properties)) {
         if (!(key in fixed) || fixed[key] === undefined || fixed[key] === null) {
             fixed[key] = prop.default;
@@ -48,6 +48,10 @@ function processDir(dir, relPath = '') {
             const { data } = matter(content);
 
             const fixedData = fixDataToSchema(data, schema);
+
+            // Debug logging after fixing
+            console.log(`  Fixed tags:`, fixedData.tags);
+            console.log('---');
 
             // Validate (should always pass now)
             if (!validate(fixedData)) {
