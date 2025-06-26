@@ -2,7 +2,8 @@ import fs from 'fs-extra';
 import matter from 'gray-matter';
 import Ajv from 'ajv';
 import path from 'path';
-import schema from './tactic.field.json' with { type: 'json' };
+
+const schema = JSON.parse(fs.readFileSync('./tactic.field.json', 'utf8'));
 
 const ajv = new Ajv({ useDefaults: true });
 const validate = ajv.compile(schema);
@@ -62,7 +63,12 @@ function processDir(dir, relPath = '') {
             const outDir = path.join(outputDir, relPath);
             fs.ensureDirSync(outDir);
             const outFile = path.join(outDir, file.replace(/\.(md|markdown)$/, '.json'));
+          
+            
             fs.writeJSONSync(outFile, fixedData, { spaces: 2 });
+            
+           
+            
             console.log(`Converted and fixed: ${fullPath} -> ${outFile}`);
         }
     });
