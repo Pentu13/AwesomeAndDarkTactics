@@ -1,10 +1,6 @@
 name: Convert Markdown to JSON
 
 on:
-  push:
-    paths:
-      - 'docs/_posts/**/*.md'
-      - 'docs/_posts/**/*.markdown'
   workflow_run:
     workflows:
       - "Move Validated Posts"
