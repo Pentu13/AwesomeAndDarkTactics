@@ -32,4 +32,4 @@ jobs:
 
       # Fix markdown schema
       - name: Fix markdown schema
-        run: node fix_markdown_schema.js
+        run: node fix_markdown_schema.cjs
