@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   move-tactics:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -54,10 +55,10 @@ jobs:
           echo "Listing files in docs/_new_posts after move:"
           ls -l docs/_new_posts || echo "No files left."
           if $moved_any; then
-            git add docs/_posts
-            git rm -r docs/_new_posts || true
-            git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
-            git push
+          git add docs/_posts
+          git rm -r docs/_new_posts || true
+          git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
+          git push
           else
             echo "No files were moved. Not deleting docs/_new_posts."
             exit 1
