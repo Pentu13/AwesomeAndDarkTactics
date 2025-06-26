@@ -1,0 +1,131 @@
+name: Awesome and Dark Tactics Unified Workflow
+
+on:
+  push:
+    paths:
+      - 'docs/_posts/**'
+      - 'docs/_new_posts/**'
+      - 'validator.js'
+      - 'tactic.field.json'
+      - '.github/workflows/awesome_and_dark_tactics.yml'
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run validation script
+        run: node validator.js
+      - name: Check for new posts
+        id: new_posts_check
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            docs/_new_posts/**
+      - name: Generate new tags
+        if: steps.new_posts_check.outputs.any_changed == 'true'
+        run: node new_tag_generator.js
+      - name: Commit and push new tag files
+        if: steps.new_posts_check.outputs.any_changed == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git reset --hard
+          git clean -fd
+          git pull --rebase origin main
+          git add docs/tags/
+          git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
+          git push
+
+  move-tactics:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Move validated tactics to category subfolders
+        run: |
+          echo "Listing files in docs/_new_posts before move:"
+          ls -l docs/_new_posts || echo "No files found."
+          moved_any=false
+          shopt -s nullglob
+          for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
+            [ -e "$file" ] || continue
+            echo "Processing $file..."
+            category=$(awk '
+              /^categories:/ {in_categories=1; next}
+              in_categories && /^ *- / {
+                sub(/^ *- /, "", $0); print $0; exit
+              }
+              in_categories && NF && !/^ / {in_categories=0}
+            ' "$file" | xargs)
+            if [ -z "$category" ]; then
+              echo "No category found in $file, skipping and NOT deleting."
+              continue
+            fi
+            mkdir -p "docs/_posts/$category"
+            mv "$file" "docs/_posts/$category/"
+            echo "Moved $file to docs/_posts/$category/"
+            moved_any=true
+          done
+          echo "Listing files in docs/_new_posts after move:"
+          ls -l docs/_new_posts || echo "No files left."
+          if $moved_any; then
+            git reset --hard
+            git clean -fd
+            git pull --rebase origin main
+            git add docs/_posts
+            git rm -r docs/_new_posts || true
+            git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
+            git push
+          else
+            echo "No files were moved. Not deleting docs/_new_posts."
+          fi
+
+  convert:
+    needs: move-tactics
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Convert Markdown to JSON
+        run: |
+          echo "Running node convert.js on all posts..."
+          node convert.js
+      - name: Commit and push converted JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git reset --hard
+          git clean -fd
+          git pull --rebase origin main
+          git add converted-tactics/
+          git commit -m "Update converted JSON after tactic update" || echo "No changes to commit"
+          git push
+
+  notify_on_error:
+    needs: [validate]
+    if: failure()
+    uses: ./.github/workflows/error-notification.yml
+    with:
+      workflow_name: ${{ github.workflow }}
+      error_messages: "Tactic validation failed. See the logs for additional information." 
