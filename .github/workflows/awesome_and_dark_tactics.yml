@@ -15,62 +15,62 @@ permissions:
   actions: write
 
 jobs:
-  validate:
+  process-tactics:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      
       - name: Install dependencies
         run: npm install
-      - name: Run validation script
-        run: node validator.js
+      
+      - name: Set git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Validate all tactics
+        run: |
+          echo "=== VALIDATING ALL TACTICS ==="
+          node validator.js
+          echo "Validation completed successfully"
+      
       - name: Check for new posts
         id: new_posts_check
         uses: tj-actions/changed-files@v44
         with:
           files: |
             docs/_new_posts/**
-      - name: Generate new tags
-        if: steps.new_posts_check.outputs.any_changed == 'true'
-        run: node new_tag_generator.js
-      - name: Commit and push new tag files
+      
+      - name: Generate new tags if needed
         if: steps.new_posts_check.outputs.any_changed == 'true'
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git reset --hard
-          git clean -fd
-          git pull --rebase origin main
-          git add docs/tags/
-          git commit -m "Auto-generate missing tag files" || echo "No changes to commit"
-          git push
-
-  move-tactics:
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Pull latest main before move
+          echo "=== GENERATING NEW TAGS ==="
+          node new_tag_generator.js
+          echo "Tag generation completed"
+      
+      - name: Move new tactics to category folders
+        if: steps.new_posts_check.outputs.any_changed == 'true'
         run: |
-          git fetch origin main
-          git checkout main
-          git reset --hard origin/main
-      - name: Set git config
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Move validated tactics to category subfolders
-        run: |
+          echo "=== MOVING NEW TACTICS ==="
           echo "Listing files in docs/_new_posts before move:"
-          ls -l docs/_new_posts || echo "No files found."
+          ls -la docs/_new_posts/ || echo "No files found in _new_posts"
+          
           moved_any=false
           shopt -s nullglob
+          
           for file in docs/_new_posts/*.md docs/_new_posts/*.markdown; do
             [ -e "$file" ] || continue
             echo "Processing $file..."
+            
+            # Extract category from front matter
             category=$(awk '
               /^categories:/ {in_categories=1; next}
               in_categories && /^ *- / {
@@ -78,64 +78,69 @@ jobs:
               }
               in_categories && NF && !/^ / {in_categories=0}
             ' "$file" | xargs)
+            
             if [ -z "$category" ]; then
-              echo "No category found in $file, skipping and NOT deleting."
+              echo "WARNING: No category found in $file, skipping and NOT deleting."
               continue
             fi
+            
+            echo "Found category: $category"
             mkdir -p "docs/_posts/$category"
             mv "$file" "docs/_posts/$category/"
-            echo "Moved $file to docs/_posts/$category/"
+            echo "✓ Moved $file to docs/_posts/$category/"
             moved_any=true
           done
+          
           echo "Listing files in docs/_new_posts after move:"
-          ls -l docs/_new_posts || echo "No files left."
+          ls -la docs/_new_posts/ || echo "No files left in _new_posts"
+          
           if $moved_any; then
-            git reset --hard
-            git clean -fd
-            git pull --rebase origin main
-            git add docs/_posts
-            git rm -r docs/_new_posts || true
-            git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
-            git push
+            echo "✓ Successfully moved tactics to category folders"
           else
-            echo "No files were moved. Not deleting docs/_new_posts."
+            echo "No tactics were moved"
           fi
-
-  convert:
-    needs: move-tactics
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Pull latest main before convert
+      
+      - name: Convert all markdown to JSON
         run: |
-          git fetch origin main
-          git checkout main
-          git reset --hard origin/main
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Install dependencies
-        run: npm install
-      - name: Convert Markdown to JSON
-        run: |
-          echo "Running node convert.js on all posts..."
+          echo "=== CONVERTING MARKDOWN TO JSON ==="
           node convert.js
-      - name: Commit and push converted JSON
+          echo "Conversion completed successfully"
+      
+      - name: Stage all changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git reset --hard
-          git clean -fd
-          git pull --rebase origin main
-          git add converted-tactics/
-          git commit -m "Update converted JSON after tactic update" || echo "No changes to commit"
+          echo "=== STAGING CHANGES ==="
+          git add .
+          echo "Staged all changes"
+      
+      - name: Check if there are changes to commit
+        id: check_changes
+        run: |
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected, will commit and push"
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "=== COMMITTING AND PUSHING CHANGES ==="
+          git commit -m "Auto-process tactics: validate, move, convert, and update JSON"
           git push
+          echo "✓ Successfully committed and pushed all changes"
+      
+      - name: No changes notification
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: |
+          echo "=== NO CHANGES TO COMMIT ==="
+          echo "All tactics are up to date, no changes needed"
 
   notify_on_error:
-    needs: [validate]
+    needs: [process-tactics]
     if: failure()
     uses: ./.github/workflows/error-notification.yml
     with:
       workflow_name: ${{ github.workflow }}
-      error_messages: "Tactic validation failed. See the logs for additional information." 
+      error_messages: "Tactic processing failed. See the logs for additional information." 
