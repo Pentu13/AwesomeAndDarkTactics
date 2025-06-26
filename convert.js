@@ -29,7 +29,7 @@ function fixDataToSchema(data, schema) {
 
     // Fill in missing fields with schema defaults
     for (const [key, prop] of Object.entries(schema.properties)) {
-        if (!(key in fixed) || fixed[key] === undefined || fixed[key] === null || fixed[key] === '') {
+        if (!(key in fixed) || fixed[key] === undefined || fixed[key] === null) {
             fixed[key] = prop.default;
         }
     }
