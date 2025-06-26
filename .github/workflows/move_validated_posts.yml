@@ -58,6 +58,7 @@ jobs:
           git add docs/_posts
           git rm -r docs/_new_posts || true
           git commit -m "Move validated tactics to category subfolders in _posts" || echo "No changes to commit"
+          git pull --rebase origin main
           git push
           else
             echo "No files were moved. Not deleting docs/_new_posts."

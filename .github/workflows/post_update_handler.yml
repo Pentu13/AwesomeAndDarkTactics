@@ -41,4 +41,5 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add converted-tactics/
           git commit -m "Update converted JSON after tactic update" || echo "No changes to commit"
+          git pull --rebase origin main
           git push
