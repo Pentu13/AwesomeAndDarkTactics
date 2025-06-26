@@ -22,7 +22,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-      - name: Fetch and checkout latest main
+      - name: Fetch and checkout latest main (only for workflow_run)
+        if: github.event.workflow_run.head_sha != null
         run: |
           git fetch origin main
           git checkout main
@@ -37,7 +38,7 @@ jobs:
         run: |
           echo "Running node convert.js on all posts..."
           node convert.js
-      - name: Checkout main branch
+      - name: Checkout main branch for push
         run: |
           git fetch origin main
           git checkout main
