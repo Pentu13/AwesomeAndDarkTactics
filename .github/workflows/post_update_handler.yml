@@ -30,6 +30,15 @@ jobs:
       - name: Validate posts
         run: node validator.js docs/_posts
 
-      # Fix markdown schema
-      - name: Fix markdown schema
-        run: node fix_markdown_schema.cjs
+
+      - name: Convert Markdown to JSON
+        run: |
+          echo "Running node convert.js on all posts..."
+          node convert.js
+      - name: Commit and push converted JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add converted-tactics/
+          git commit -m "Update converted JSON after tactic update" || echo "No changes to commit"
+          git push
