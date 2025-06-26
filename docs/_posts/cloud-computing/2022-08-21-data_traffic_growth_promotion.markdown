@@ -1,7 +1,8 @@
 ---
 layout: tactic
 title: Data traffic growth promotion
-tags: []
+tags: 
+ - testtagggforexistingone
 t-sort: Dark Tactic
 t-type: Unsustainable Pattern
 categories:
