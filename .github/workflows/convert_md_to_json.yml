@@ -8,6 +8,7 @@ on:
   workflow_run:
     workflows:
       - "Move Validated Posts"
+      - "Post Update Handler"
     types:
       - completed
 
