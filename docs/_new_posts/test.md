@@ -36,7 +36,7 @@ t-countermeasure: >-
   introduce digital sufficiency as a principle for sustainable digitalization,
   which they define as 'as much digitalization as necessary and as little as
   possible'. The idea is to shift towards designing longer-lasting and reparable
-  hardware and software, only collecting necessary data and placing the user
+  hardware and software, only colncnlecting necessary data and placing the user
   back at the center of the concerns.
 t-source: >-
   *The Dark Side of Cloud and Edge Computing* by Klervie Toczé, Maël Madon,
